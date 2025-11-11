@@ -5,6 +5,6 @@ November 4th, 2025 - Adding a basic menu to the game - The DOTween plugins were 
 
 November 8th, 2025 - A prototype of the player's movement was created.
 
-November 9th, 2025 - Implementation of the player's physics and jump. Adjustments to friction values ​​and jump force. The camera also follows the player.
+November 9th, 2025 - Implementation of the player's physics and jump. Adjustments to friction values ​​and jump force.
 
-November 10th, 2025 - Modifications were made to the player's script, including the logic for running when the Z key is pressed. The animation for the character's jump has been included, decreasing the Y-axis. Pending task: include an animation that changes the Y-axis when the character touches the ground after the jump.
+November 10th, 2025 - Modifications were made to the player's script, including the logic for running when the Z key is pressed. The camera also follows the player. The animation for the character's jump has been included, decreasing the Y-axis. Pending task: include an animation that changes the Y-axis when the character touches the ground after the jump.
