@@ -6,3 +6,5 @@ November 4th, 2025 - Adding a basic menu to the game - The DOTween plugins were 
 November 8th, 2025 - A prototype of the player's movement was created.
 
 November 9th, 2025 - Implementation of the player's physics and jump. Adjustments to friction values ​​and jump force.
+
+November 10th,, 2025 - Modifications were made to the player's script, including the logic for running when the Z key is pressed.
