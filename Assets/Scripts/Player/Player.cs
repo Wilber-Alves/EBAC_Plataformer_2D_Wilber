@@ -4,10 +4,11 @@ using UnityEngine.EventSystems;
 using DG.Tweening;
 using System.Collections;
 
+
 public class Player : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
-    
+    private Vector2 originalScale;
 
     [Header("Speed Settings")]
     
@@ -16,28 +17,58 @@ public class Player : MonoBehaviour
     public float speedRun = 20.0f ;
     public float forceJump = 20.0f;
 
-    [Header("Animation Settings")]
 
-    public float jumpScaleY = 1.5f;
-    public float jumpScaleX = 0.7f;
+    [Header("Animation Settings")]
+    
+    public Vector2 idleScale = new Vector2(1f, 1f);
+    public Vector2 jumpScale = new Vector2(0.75f, 1.5f);
+    public Vector2 landScale = new Vector2(1.5f, 0.75f);
     public float jumpScaleDuration = 0.2f;
-    public Ease ease = Ease.OutBack;
+    public float landScaleDuration = 0.1f;
+    public float landDelay = 0.05f;
+    public Ease jumpEase = Ease.OutQuad;
+    public Ease landEase = Ease.InQuad;
+    public Ease delayEase = Ease.InBack;
 
     private float _currentSpeed;
- 
+
+
     void Start()
     {
- 
+       myRigidbody = GetComponent<Rigidbody2D>();
+       originalScale = myRigidbody.transform.localScale;
     }
-
+    private void HandleScaleJump()
+    {
+        myRigidbody.DOKill();
+        DG.Tweening.Sequence jumpSequence = DOTween.Sequence();
+        jumpSequence.Append(myRigidbody.transform.DOScale(jumpScale,jumpScaleDuration).SetEase(jumpEase));
+        jumpSequence.Append(myRigidbody.transform.DOScale(idleScale,jumpScaleDuration).SetEase(Ease.OutQuad));
+       
+    }
+    private void HandleScaleLanded()
+    {
+        myRigidbody.DOKill();
+        DG.Tweening.Sequence landSequence = DOTween.Sequence();
+        landSequence.Append(myRigidbody.transform.DOScale(landScale,landScaleDuration).SetEase(landEase));
+        landSequence.Append(myRigidbody.transform.DOScale(originalScale,landScaleDuration).SetEase(Ease.InQuad));
+        landSequence.Append(myRigidbody.transform.DOScale(idleScale,landDelay).SetEase(Ease.InBack));
+    }
     void Update()
     {
         HandleMovement();
         HandleJump();
-        HandleScaleJump();
+    }
+    private void HandleJump()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            myRigidbody.linearVelocity = Vector2.up * forceJump;
+            HandleScaleJump();
+        }
     }
 
-    private void HandleMovement()
+private void HandleMovement()
     {
 
         if (Input.GetKey(KeyCode.Z))
@@ -72,24 +103,13 @@ public class Player : MonoBehaviour
         }
 
     }
-    private void HandleJump()
+    void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+   
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
-            myRigidbody.linearVelocity = Vector2.up * forceJump;
-            myRigidbody.transform.localScale = Vector2.one;
-            DOTween.Kill(myRigidbody.transform);
-          
+            HandleScaleLanded();
         }
 
     }
-    private void HandleScaleJump()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            myRigidbody.transform.DOScaleY(jumpScaleY,jumpScaleDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-            myRigidbody.transform.DOScaleX(jumpScaleX,jumpScaleDuration).SetLoops(2, LoopType.Yoyo).SetEase(ease);
-        }
-    }
-
 }
