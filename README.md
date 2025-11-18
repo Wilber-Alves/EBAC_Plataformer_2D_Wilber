@@ -11,3 +11,5 @@ November 9th, 2025 - Implementation of the player's physics and jump. Adjustment
 November 10th, 2025 - Modifications were made to the player's script, including the logic for running when the Z key is pressed. The camera also follows the player. The animation for the character's jump, when the Space key is pressed, has been included, decreasing the Y-axis. Pending task: include an animation that changes the Y-axis when the character touches the ground after the jump.
 
 November 15th, 2025 - Jump animation update. Pending task completed, the character now has animations for both jumping and landing. Hitting platforms from below also activates a slight bouncing animation. Health system creation. Enemy creation for health system testing. If the player touches the enemy (passive type enemy with thorns), it will automatically die after a short delay. (Module 14 submission - Creating a 2D platformer: Movement).
+
+November 18th, 2025 - New sprites imported from EBAC package. Start the animation classes. 
