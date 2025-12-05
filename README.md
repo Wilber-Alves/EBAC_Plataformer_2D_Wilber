@@ -12,4 +12,7 @@ November 10th, 2025 - Modifications were made to the player's script, including 
 
 November 15th, 2025 - Jump animation update. Pending task completed, the character now has animations for both jumping and landing. Hitting platforms from below also activates a slight bouncing animation. Health system creation. Enemy creation for health system testing. If the player touches the enemy (passive type enemy with thorns), it will automatically die after a short delay. (Module 14 submission - Creating a 2D platformer: Movement).
 
-November 18th, 2025 - New sprites imported from EBAC package. Start the animation classes. 
+November 18th, 2025 - New sprites imported from EBAC package. Start the animation classes.
+
+December 5th, 2025 - Updates have been made to the level design to test the character's jumping, running, and landing animations. The jumping and movement mechanics have been updated. Now the character can run, turn right and left by changing the sprite, and it's possible to jump while looking in the correct direction. Additionally, it's possible to run by pressing Z and change the animation to running. Pressing A and S allows you to change the animation of the enemies (satellites); their animations were created in the animator with skinning previously done in Unity from 2D sprites. The infinite jump problem has been fixed, and now the player can jump, double jump, and if near a wall, can jump infinitely, as if in climbing mode (only works on walls). Implemented animations: Run / Idle / JumpUp / JumpDown / JumpLanding. Animation not implemented: Run1 / Death. (Module 15 submission - Creating a 2D platformer: Animation 2D).
+
