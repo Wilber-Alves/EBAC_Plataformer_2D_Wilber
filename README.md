@@ -18,4 +18,4 @@ December 5th, 2025 - Updates have been made to the level design to test the char
 
 December 9th, 2025 - Updates collectible coins to the project, including coin sprites, a 3D coin prefab, and a dedicated folder for collectible items. Key features include an animation script for items with rotation and vertical movement, a base script for collision detection and item destruction, and a script for collecting coins that interacts with an ItemManager to track the collected amount. The ItemManager script monitors coin collection, though a known issue currently causes it to count two coins per collection instead of one (NEEDS FIXING). Collectible coins have also been added to the scene. Arts also added to the scene.
 
-
+December 12th, 2025 - The prototype level design was created using three new sprites made in Aseprite (Pixel art): an ice crystal, a cave, and a stone block. Animations were included for enemies and collectible items. NOTE: the same coin animation script was included for enemies, but the collection function was disabled.
