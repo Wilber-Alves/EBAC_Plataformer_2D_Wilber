@@ -1,0 +1,233 @@
+fileFormatVersion: 2
+guid: 690db0d4fa7daef4c813d0fda220ca01
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9099983020097323802
+    second: Plataform_Rock_Colors_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Plataform_Rock_Colors_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1200
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a13ccfec752a94e70800000000000000
+      internalID: 9099983020097323802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 459061823e4b97748a3935c1bfb78f3c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Plataform_Rock_Colors_0: 9099983020097323802
+      Plataform_Rock_Colors_1: -1868333322
+      Plataform_Rock_Colors_10: 832567048
+      Plataform_Rock_Colors_11: -1995677057
+      Plataform_Rock_Colors_12: 742019381
+      Plataform_Rock_Colors_13: 1193199018
+      Plataform_Rock_Colors_14: -144678790
+      Plataform_Rock_Colors_15: 620557878
+      Plataform_Rock_Colors_16: 1849748160
+      Plataform_Rock_Colors_17: 1819850224
+      Plataform_Rock_Colors_18: 2017905098
+      Plataform_Rock_Colors_19: -1720114796
+      Plataform_Rock_Colors_2: 612287466
+      Plataform_Rock_Colors_20: 1319846014
+      Plataform_Rock_Colors_21: 1966769106
+      Plataform_Rock_Colors_22: 2082535617
+      Plataform_Rock_Colors_23: -1068183985
+      Plataform_Rock_Colors_24: -37753834
+      Plataform_Rock_Colors_25: 944582557
+      Plataform_Rock_Colors_26: -1805615486
+      Plataform_Rock_Colors_27: -993648433
+      Plataform_Rock_Colors_28: 730594561
+      Plataform_Rock_Colors_29: -690150972
+      Plataform_Rock_Colors_3: 1700563382
+      Plataform_Rock_Colors_30: -697379728
+      Plataform_Rock_Colors_31: 89090948
+      Plataform_Rock_Colors_32: -873614838
+      Plataform_Rock_Colors_33: -1241239370
+      Plataform_Rock_Colors_34: -1260931057
+      Plataform_Rock_Colors_35: 451529688
+      Plataform_Rock_Colors_36: 1162396272
+      Plataform_Rock_Colors_37: 231510918
+      Plataform_Rock_Colors_38: -574612082
+      Plataform_Rock_Colors_39: 2098530667
+      Plataform_Rock_Colors_4: 184355208
+      Plataform_Rock_Colors_40: -1585407351
+      Plataform_Rock_Colors_41: -278909892
+      Plataform_Rock_Colors_42: 43007099
+      Plataform_Rock_Colors_43: -1065546316
+      Plataform_Rock_Colors_44: 1661761404
+      Plataform_Rock_Colors_45: 2022264717
+      Plataform_Rock_Colors_46: -651899443
+      Plataform_Rock_Colors_47: 354056683
+      Plataform_Rock_Colors_48: 2099147200
+      Plataform_Rock_Colors_49: -2095613552
+      Plataform_Rock_Colors_5: 1066036720
+      Plataform_Rock_Colors_50: 1842893821
+      Plataform_Rock_Colors_51: -1019886558
+      Plataform_Rock_Colors_52: 99778789
+      Plataform_Rock_Colors_53: -1177139379
+      Plataform_Rock_Colors_54: 516667034
+      Plataform_Rock_Colors_55: -2108515141
+      Plataform_Rock_Colors_56: 258132233
+      Plataform_Rock_Colors_57: -1802234606
+      Plataform_Rock_Colors_58: -1660958297
+      Plataform_Rock_Colors_59: -591460733
+      Plataform_Rock_Colors_6: -1889104824
+      Plataform_Rock_Colors_60: 2061047790
+      Plataform_Rock_Colors_61: -650321846
+      Plataform_Rock_Colors_62: 1638803504
+      Plataform_Rock_Colors_63: -1083394151
+      Plataform_Rock_Colors_64: 573798209
+      Plataform_Rock_Colors_65: 1371396843
+      Plataform_Rock_Colors_66: 1455761972
+      Plataform_Rock_Colors_67: -2101198385
+      Plataform_Rock_Colors_68: -1602281385
+      Plataform_Rock_Colors_69: 11895366
+      Plataform_Rock_Colors_7: 1364210858
+      Plataform_Rock_Colors_70: 1433332504
+      Plataform_Rock_Colors_71: -300602787
+      Plataform_Rock_Colors_72: 228298274
+      Plataform_Rock_Colors_73: 1977720797
+      Plataform_Rock_Colors_74: 475614950
+      Plataform_Rock_Colors_75: 1178696615
+      Plataform_Rock_Colors_76: -979756365
+      Plataform_Rock_Colors_77: -2134854505
+      Plataform_Rock_Colors_78: 1889697184
+      Plataform_Rock_Colors_79: -144282022
+      Plataform_Rock_Colors_8: -1361000888
+      Plataform_Rock_Colors_80: -212501930
+      Plataform_Rock_Colors_81: 1354077729
+      Plataform_Rock_Colors_82: 1658576753
+      Plataform_Rock_Colors_83: 1722146739
+      Plataform_Rock_Colors_84: -262944432
+      Plataform_Rock_Colors_85: 1826954340
+      Plataform_Rock_Colors_86: 1950786410
+      Plataform_Rock_Colors_87: 839747765
+      Plataform_Rock_Colors_88: 294446992
+      Plataform_Rock_Colors_89: -2090673855
+      Plataform_Rock_Colors_9: -623116867
+      Plataform_Rock_Colors_90: -2011343388
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
