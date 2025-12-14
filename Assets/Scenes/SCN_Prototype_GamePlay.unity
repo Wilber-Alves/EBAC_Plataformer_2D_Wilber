@@ -866,6 +866,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &78464076 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5842915932965311795, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &80870973 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
@@ -2176,6 +2181,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba78798159e737345af970b17cdae529, type: 3}
+--- !u!212 &185876125 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7301150156096908687, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &197272619 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
@@ -2862,6 +2872,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 1949769174}
+  triggerAttack: Attack
 --- !u!61 &257214218
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3352,6 +3364,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!61 &281965453
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3425,6 +3439,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!212 &283310261 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2672610142402919951, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &283564895
 GameObject:
   m_ObjectHideFlags: 0
@@ -3667,6 +3686,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!61 &314287601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4270,6 +4291,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 1378769132}
+  triggerAttack: Attack
 --- !u!61 &352686177
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6344,6 +6367,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!61 &456936087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7443,6 +7468,11 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!212 &523766951 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1637968192941115163, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &524507151 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
@@ -9415,6 +9445,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba78798159e737345af970b17cdae529, type: 3}
+--- !u!212 &704784288 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9145059997782691051, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &709543259 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
@@ -9808,6 +9843,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 1440717215}
+  triggerAttack: Attack
 --- !u!61 &734617993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9949,6 +9986,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!61 &760160040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10322,6 +10361,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &786911204 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3517653971288608096, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &799245244 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
@@ -11045,6 +11089,11 @@ RectTransform:
   m_AnchoredPosition: {x: 50, y: -50}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!212 &846262268 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1181252494661186000, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &851490900
 GameObject:
   m_ObjectHideFlags: 0
@@ -12905,6 +12954,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!61 &992834538
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12978,6 +13029,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!212 &1005353034 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7718624693209762858, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1009968599
 GameObject:
   m_ObjectHideFlags: 0
@@ -14203,6 +14259,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba78798159e737345af970b17cdae529, type: 3}
+--- !u!95 &1081709971 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8447508271942116033, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 1736017348}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1091437812
 GameObject:
   m_ObjectHideFlags: 0
@@ -14253,6 +14314,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!50 &1091437815
 Rigidbody2D:
   serializedVersion: 5
@@ -15395,6 +15458,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1202486160 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6935664543094779335, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1216257641
 GameObject:
   m_ObjectHideFlags: 0
@@ -15679,6 +15747,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2464118016884713451, guid: ec02ba89964c0a34c894fbaa4b2e8b02, type: 3}
   m_PrefabInstance: {fileID: 1259301892}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1232029080 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7274142433465299202, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1233842583
 GameObject:
@@ -17193,6 +17266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!61 &1370427750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17335,6 +17410,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba78798159e737345af970b17cdae529, type: 3}
+--- !u!95 &1378769132 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8447508271942116033, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 1341330641}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1379789411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17565,6 +17645,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
   m_PrefabInstance: {fileID: 544730134}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1407339236 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5421898557666172458, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1407456458
 GameObject:
   m_ObjectHideFlags: 0
@@ -17626,6 +17711,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 1081709971}
+  triggerAttack: Attack
 --- !u!61 &1407456463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17842,6 +17929,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
   m_PrefabInstance: {fileID: 643909508}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1419136627 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3381466231696810971, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1422215095
 PrefabInstance:
@@ -18252,6 +18344,11 @@ SpriteRenderer:
 --- !u!4 &1440717213 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 1161069675}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1440717215 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8447508271942116033, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
   m_PrefabInstance: {fileID: 1161069675}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1457168074
@@ -18742,6 +18839,11 @@ SpriteRenderer:
 --- !u!4 &1485149477 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 64632019}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1485149479 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8447508271942116033, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
   m_PrefabInstance: {fileID: 64632019}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1485967907
@@ -20445,6 +20547,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
   m_PrefabInstance: {fileID: 1193238254}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1618849816 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2936941509222344250, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1625564998
 GameObject:
   m_ObjectHideFlags: 0
@@ -20814,6 +20921,7 @@ GameObject:
   - component: {fileID: 1638859789}
   - component: {fileID: 1638859790}
   - component: {fileID: 1638859791}
+  - component: {fileID: 1638859792}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -20961,6 +21069,7 @@ MonoBehaviour:
   startHealth: 30
   destroyOnKill: 1
   delayToDestroy: 0.1
+  _flashColor: {fileID: 1638859792}
 --- !u!210 &1638859791
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -20973,6 +21082,45 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 17
   m_SortAtRoot: 0
+--- !u!114 &1638859792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1638859784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2a355f42b7e2640b57cf1a9f832931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderers:
+  - {fileID: 283310261}
+  - {fileID: 1647214437}
+  - {fileID: 78464076}
+  - {fileID: 786911204}
+  - {fileID: 1871947187}
+  - {fileID: 1419136627}
+  - {fileID: 185876125}
+  - {fileID: 1407339236}
+  - {fileID: 704784288}
+  - {fileID: 523766951}
+  - {fileID: 1005353034}
+  - {fileID: 1641224528}
+  - {fileID: 846262268}
+  - {fileID: 1202486160}
+  - {fileID: 1986908256}
+  - {fileID: 1618849816}
+  - {fileID: 1696506787}
+  - {fileID: 1232029080}
+  - {fileID: 1978459997}
+  color1: {r: 1, g: 0.48297372, b: 0.3160377, a: 1}
+  duration: 0.1
+--- !u!212 &1641224528 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9069580248349405312, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1641408232
 GameObject:
   m_ObjectHideFlags: 0
@@ -21239,6 +21387,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1647214437 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4546307769011690981, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1653806449 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
@@ -21806,6 +21959,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1696506787 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 1918426282720007879, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1698817789 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
@@ -24181,6 +24339,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
   m_PrefabInstance: {fileID: 662435418}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &1871947187 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3971700845632200199, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1877822786
 GameObject:
   m_ObjectHideFlags: 0
@@ -24318,6 +24481,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!50 &1881748240
 Rigidbody2D:
   serializedVersion: 5
@@ -24457,6 +24622,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 1485149479}
+  triggerAttack: Attack
 --- !u!61 &1885447584
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25667,6 +25834,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
   m_PrefabInstance: {fileID: 456669648}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1949769174 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8447508271942116033, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 456669648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1952720911
 GameObject:
   m_ObjectHideFlags: 0
@@ -26149,6 +26321,16 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &1978459997 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4989476794605110809, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &1986908256 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8789406625549365556, guid: 00afc9fb4087652419d090da0b825d97, type: 3}
+  m_PrefabInstance: {fileID: 541864735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1989943629
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27014,6 +27196,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!50 &2044664129
 Rigidbody2D:
   serializedVersion: 5
@@ -27564,6 +27748,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!61 &2071059472
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27820,6 +28006,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
+  animator: {fileID: 2829218103614953971}
+  triggerAttack: Attack
 --- !u!61 &2081602939
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28554,6 +28742,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!212 &130743430244630306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29060,6 +29250,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!50 &600109491251464200
 Rigidbody2D:
   serializedVersion: 5
@@ -29476,6 +29668,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!4 &1023430237556451960
 Transform:
   m_ObjectHideFlags: 0
@@ -29670,6 +29864,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!212 &1307777139849577092
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30034,6 +30230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!50 &1582068959020881362
 Rigidbody2D:
   serializedVersion: 5
@@ -30572,6 +30770,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!1 &2536536638704868600
 GameObject:
   m_ObjectHideFlags: 0
@@ -30656,6 +30856,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!212 &2612753060923622820
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30908,6 +31110,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
   m_PrefabInstance: {fileID: 7352623713183134826}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &2829218103614953971 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8447508271942116033, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 7352623713183134826}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2831551055506634958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30921,6 +31128,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!212 &2843810150094491577
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31478,6 +31687,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!212 &3449601060610575272
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31561,6 +31772,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!1 &3580435707959556970
 GameObject:
   m_ObjectHideFlags: 0
@@ -31642,6 +31855,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!1 &3696142441903452358
 GameObject:
   m_ObjectHideFlags: 0
@@ -31824,6 +32039,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!4 &3854565449858658683
 Transform:
   m_ObjectHideFlags: 0
@@ -33527,6 +33744,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!4 &5706522611937759078
 Transform:
   m_ObjectHideFlags: 0
@@ -34941,6 +35160,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!212 &7139878079296644221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35597,6 +35818,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!1 &7589872207390742521
 GameObject:
   m_ObjectHideFlags: 0
@@ -35737,6 +35960,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!1 &7702782137276201967
 GameObject:
   m_ObjectHideFlags: 0
@@ -35881,6 +36106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!4 &7962437072744290430
 Transform:
   m_ObjectHideFlags: 0
@@ -36014,6 +36241,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!4 &8178634203641217267
 Transform:
   m_ObjectHideFlags: 0
@@ -36253,6 +36482,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!1 &8491839174367328271
 GameObject:
   m_ObjectHideFlags: 0
@@ -36358,6 +36589,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!1 &8581930069436641332
 GameObject:
   m_ObjectHideFlags: 0
@@ -36582,6 +36815,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
+  animator: {fileID: 0}
+  triggerAttack: Attack
 --- !u!1 &8907460375546801521
 GameObject:
   m_ObjectHideFlags: 0
