@@ -1,7 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
 
-
 public class Player : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
@@ -135,7 +134,7 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Z))
         {
             _currentSpeed = speedRun;
-            animator.speed = 2f;
+            animator.speed = 2.0f;
         }
         else
         {
@@ -164,7 +163,7 @@ public class Player : MonoBehaviour
 
             if (Mathf.Sign(myRigidbody.transform.localScale.x) != _facingDirection)
             {
-                myRigidbody.transform.DOScaleX(targetScaleX, 0.1f);
+                myRigidbody.transform.DOScaleX(targetScaleX, 0.005f);
             }
             animator.SetBool(boolRun, true);
         }
