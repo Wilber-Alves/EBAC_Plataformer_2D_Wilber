@@ -3,7 +3,6 @@ using UnityEngine;
 namespace EDGEE.Core.Singleton
 {
 
-
     public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
         public static T Instance;

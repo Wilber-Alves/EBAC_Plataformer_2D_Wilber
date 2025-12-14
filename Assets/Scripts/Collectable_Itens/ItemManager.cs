@@ -1,22 +1,10 @@
-using Unity.VisualScripting;
-using UnityEngine;
-using System.Collections.Generic;
-using System;
+using EDGEE.Core.Singleton;
 
-public class ItemManager : MonoBehaviour
+public class ItemManager : Singleton<ItemManager>
 {
-    public static ItemManager Instance;
 
-    public int totalCoins = 0;
-
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
-    }
-    private void Start()
+    public float totalCoins;
+    void Start()
     {
         Reset();
     }
@@ -26,7 +14,7 @@ public class ItemManager : MonoBehaviour
 
 
     }
-    public void AddCoins(int amount = 1)
+    public void AddCoins(float amount = 0.5f)
     {
         totalCoins += amount;
     }
