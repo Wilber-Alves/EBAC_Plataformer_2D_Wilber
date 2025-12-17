@@ -31,3 +31,6 @@ The prototype level design was created using three new sprites made in Aseprite 
 
 ## December 14th, 2025
 The coin sprite was enhanced with refined 3D edge lines and new particle effects. Player and enemy animations were updated for increased fluidity. Enemy prefabs were remade to alter colors and sizes, categorizing them as passive (spikes, satellites) and reactive (slimes). And the level design are remade with new environments, items, and enemy placements. Flash damage feedback implemented. 
+
+## December 17th, 2025
+Implemented weapon collection and projectile system. Created a container-based prefab for projectiles to ensure animations flip correctly for both directions. Introduced a 'Weapon' folder containing three core scripts: InventoryBase (collection/equipping), ProjectileBase (movement mechanics), and WeaponBase (firing logic). Added a particle system to the collectible item for improved visual feedback.
