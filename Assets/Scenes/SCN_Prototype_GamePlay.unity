@@ -2775,6 +2775,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 1949769174}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &257214218
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3267,6 +3270,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &281965453
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3589,6 +3595,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &314287601
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4117,7 +4126,6 @@ Transform:
   m_Children:
   - {fileID: 2071059469}
   - {fileID: 760160036}
-  - {fileID: 456936083}
   - {fileID: 2081602935}
   - {fileID: 257214214}
   - {fileID: 734617989}
@@ -4141,9 +4149,11 @@ GameObject:
   m_Component:
   - component: {fileID: 352686173}
   - component: {fileID: 352686177}
-  - component: {fileID: 352686175}
-  - component: {fileID: 352686174}
   - component: {fileID: 352686178}
+  - component: {fileID: 352686180}
+  - component: {fileID: 352686179}
+  - component: {fileID: 352686181}
+  - component: {fileID: 352686174}
   m_Layer: 0
   m_Name: RED_Slime (3)
   m_TagString: Enemy
@@ -4164,7 +4174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 418664638}
+  - {fileID: 529915597}
   m_Father: {fileID: 341940029}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!210 &352686174
@@ -4179,21 +4189,6 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 17
   m_SortAtRoot: 0
---- !u!114 &352686175
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 352686172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cfefbf319c4a349b2e6fcbcb416562, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  animator: {fileID: 1378769132}
-  triggerAttack: Attack
 --- !u!61 &352686177
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4256,7 +4251,7 @@ Rigidbody2D:
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 10
-  m_Material: {fileID: 6200000, guid: 9ea1c930e23418e409af061bc99e3e86, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -4267,6 +4262,62 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &352686179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352686172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63131a042227795409e04c5cf459827c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 10
+  destroyOnKill: 1
+  delayToDestroy: 1
+  _flashColor: {fileID: 352686181}
+--- !u!114 &352686180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352686172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3cfefbf319c4a349b2e6fcbcb416562, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  animator: {fileID: 529915599}
+  triggerAttack: Attack
+  healthBase: {fileID: 352686179}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &352686181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352686172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2a355f42b7e2640b57cf1a9f832931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderers:
+  - {fileID: 529915598}
+  - {fileID: 389614770}
+  - {fileID: 864515187}
+  - {fileID: 1865607651}
+  - {fileID: 573142687}
+  - {fileID: 1885700498}
+  - {fileID: 876430861}
+  flashColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  duration: 0.1
 --- !u!4 &352727878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
@@ -4516,6 +4567,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
   m_PrefabInstance: {fileID: 828835061}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &389614770 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5703390189896912652, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 605652026}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &391885144 stripped
 Transform:
@@ -5200,11 +5256,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!4 &418664638 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-  m_PrefabInstance: {fileID: 1341330641}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &424659955
 GameObject:
   m_ObjectHideFlags: 0
@@ -6233,12 +6284,12 @@ Transform:
   m_GameObject: {fileID: 456936082}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 65.8, y: 17.8, z: -0.27999973}
-  m_LocalScale: {x: 1.6541, y: 1.6541, z: 1.6541}
+  m_LocalPosition: {x: 0, y: -13.898799, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 710561096}
-  m_Father: {fileID: 341940029}
+  m_Father: {fileID: 760160036}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &456936084
 MonoBehaviour:
@@ -6270,6 +6321,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &456936087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7516,6 +7570,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
   m_PrefabInstance: {fileID: 1695058909}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &529915597 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 605652026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &529915598 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4730242370603605677, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 605652026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &529915599 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8447508271942116033, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 605652026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &531181818
 GameObject:
   m_ObjectHideFlags: 0
@@ -7856,6 +7925,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
   m_PrefabInstance: {fileID: 1047276822}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &573142687 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 5387647643445047480, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 605652026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &584708695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8091,6 +8165,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba78798159e737345af970b17cdae529, type: 3}
+--- !u!1001 &605652026
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 352686173}
+    m_Modifications:
+    - target: {fileID: 515821505294836982, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_Name
+      value: PFB_RED_Slime1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
 --- !u!1 &608379696
 GameObject:
   m_ObjectHideFlags: 0
@@ -9881,6 +10012,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 1440717215}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &734617993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9992,6 +10126,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1231259391}
+  - {fileID: 456936083}
   m_Father: {fileID: 341940029}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &760160037
@@ -10024,6 +10159,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &760160040
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11358,6 +11496,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &864515187 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2098528642957615678, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 605652026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &867161077
 GameObject:
   m_ObjectHideFlags: 0
@@ -11450,6 +11593,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
   m_PrefabInstance: {fileID: 1199525294}
   m_PrefabAsset: {fileID: 0}
+--- !u!212 &871543247 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7129536931174443878, guid: ec02ba89964c0a34c894fbaa4b2e8b02, type: 3}
+  m_PrefabInstance: {fileID: 6525135013380063731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &871556832
 GameObject:
   m_ObjectHideFlags: 0
@@ -11537,6 +11685,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!212 &876430861 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6889306746547195745, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 605652026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &877787025
 GameObject:
   m_ObjectHideFlags: 0
@@ -12992,6 +13145,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &992834538
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14352,6 +14508,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!50 &1091437815
 Rigidbody2D:
   serializedVersion: 5
@@ -17013,63 +17172,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &1341330641
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 352686173}
-    m_Modifications:
-    - target: {fileID: 515821505294836982, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_Name
-      value: PFB_Enemy_1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
 --- !u!4 &1343626752 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
@@ -17304,6 +17406,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &1370427750
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -17446,11 +17551,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba78798159e737345af970b17cdae529, type: 3}
---- !u!95 &1378769132 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 8447508271942116033, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
-  m_PrefabInstance: {fileID: 1341330641}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1379789411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17749,6 +17849,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 1081709971}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &1407456463
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -20962,8 +21065,8 @@ GameObject:
   - component: {fileID: 1638859789}
   - component: {fileID: 1638859790}
   - component: {fileID: 1638859792}
-  - component: {fileID: 1638859791}
   - component: {fileID: 1638859793}
+  - component: {fileID: 1638859791}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -21156,7 +21259,7 @@ MonoBehaviour:
   - {fileID: 1696506787}
   - {fileID: 1232029080}
   - {fileID: 1978459997}
-  color1: {r: 1, g: 0.48297372, b: 0.3160377, a: 1}
+  flashColor: {r: 1, g: 0.6950374, b: 0.5707547, a: 1}
   duration: 0.1
 --- !u!114 &1638859793
 MonoBehaviour:
@@ -24229,6 +24332,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba78798159e737345af970b17cdae529, type: 3}
+--- !u!212 &1865607651 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 2402791610762573009, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 605652026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1865693878
 GameObject:
   m_ObjectHideFlags: 0
@@ -24539,6 +24647,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!50 &1881748240
 Rigidbody2D:
   serializedVersion: 5
@@ -24617,6 +24728,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2464118016884713451, guid: ec02ba89964c0a34c894fbaa4b2e8b02, type: 3}
   m_PrefabInstance: {fileID: 6525135013380063731}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1883380877 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6218027598393333866, guid: ec02ba89964c0a34c894fbaa4b2e8b02, type: 3}
+  m_PrefabInstance: {fileID: 6525135013380063731}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1885447579
 GameObject:
   m_ObjectHideFlags: 0
@@ -24680,6 +24796,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 1485149479}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &1885447584
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -24753,6 +24872,11 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!212 &1885700498 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6473350680461286659, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+  m_PrefabInstance: {fileID: 605652026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1888343318
 GameObject:
   m_ObjectHideFlags: 0
@@ -27254,6 +27378,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!50 &2044664129
 Rigidbody2D:
   serializedVersion: 5
@@ -27766,7 +27893,11 @@ GameObject:
   m_Component:
   - component: {fileID: 2071059469}
   - component: {fileID: 2071059472}
+  - component: {fileID: 2071059476}
   - component: {fileID: 2071059470}
+  - component: {fileID: 2071059475}
+  - component: {fileID: 2071059474}
+  - component: {fileID: 2071059473}
   m_Layer: 0
   m_Name: Satellite
   m_TagString: Enemy
@@ -27803,8 +27934,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  animator: {fileID: 0}
+  animator: {fileID: 1883380877}
   triggerAttack: Attack
+  healthBase: {fileID: 2071059475}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &2071059472
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27835,7 +27969,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -27851,6 +27985,81 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.3905761, y: 2.073619}
   m_EdgeRadius: 0
+--- !u!114 &2071059473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071059468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca960f7f3d5c6d24e96fb270a41a0231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1883380877}
+  keyToTrigger: 97
+  keyToReset: 115
+  triggerToPlay: Fly
+--- !u!114 &2071059474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071059468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0b2a355f42b7e2640b57cf1a9f832931, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spriteRenderers:
+  - {fileID: 871543247}
+  flashColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  duration: 0.1
+--- !u!114 &2071059475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071059468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63131a042227795409e04c5cf459827c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 10
+  destroyOnKill: 1
+  delayToDestroy: 0
+  _flashColor: {fileID: 2071059474}
+--- !u!50 &2071059476
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2071059468}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &2075072574
 GameObject:
   m_ObjectHideFlags: 0
@@ -27995,9 +28204,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2081602935}
   - component: {fileID: 2081602939}
-  - component: {fileID: 2081602937}
-  - component: {fileID: 2081602936}
   - component: {fileID: 2081602940}
+  - component: {fileID: 2081602937}
+  - component: {fileID: 2081602941}
+  - component: {fileID: 2081602936}
   m_Layer: 0
   m_Name: RED_Slime
   m_TagString: Enemy
@@ -28048,6 +28258,9 @@ MonoBehaviour:
   damage: 10
   animator: {fileID: 2829218103614953971}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!61 &2081602939
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -28121,6 +28334,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &2081602941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081602934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63131a042227795409e04c5cf459827c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startHealth: 10
+  destroyOnKill: 1
+  delayToDestroy: 1
+  _flashColor: {fileID: 0}
 --- !u!1 &2082311966
 GameObject:
   m_ObjectHideFlags: 0
@@ -28794,6 +29023,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &130743430244630306
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -29302,6 +29534,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!50 &600109491251464200
 Rigidbody2D:
   serializedVersion: 5
@@ -29720,6 +29955,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &1023430237556451960
 Transform:
   m_ObjectHideFlags: 0
@@ -29916,6 +30154,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &1307777139849577092
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30282,6 +30523,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!50 &1582068959020881362
 Rigidbody2D:
   serializedVersion: 5
@@ -30822,6 +31066,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &2536536638704868600
 GameObject:
   m_ObjectHideFlags: 0
@@ -30908,6 +31155,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &2612753060923622820
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31180,6 +31430,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &2843810150094491577
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31889,6 +32142,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &3449601060610575272
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -31974,6 +32230,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3580435707959556970
 GameObject:
   m_ObjectHideFlags: 0
@@ -32057,6 +32316,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3696142441903452358
 GameObject:
   m_ObjectHideFlags: 0
@@ -32241,6 +32503,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &3854565449858658683
 Transform:
   m_ObjectHideFlags: 0
@@ -33951,6 +34216,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &5706522611937759078
 Transform:
   m_ObjectHideFlags: 0
@@ -35367,6 +35635,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!212 &7139878079296644221
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35809,6 +36080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_Enemy_1
       objectReference: {fileID: 0}
+    - target: {fileID: 515821505294836982, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 4474521763385427419, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -36025,6 +36300,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7589872207390742521
 GameObject:
   m_ObjectHideFlags: 0
@@ -36167,6 +36445,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &7702782137276201967
 GameObject:
   m_ObjectHideFlags: 0
@@ -36313,6 +36594,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &7962437072744290430
 Transform:
   m_ObjectHideFlags: 0
@@ -36448,6 +36732,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!4 &8178634203641217267
 Transform:
   m_ObjectHideFlags: 0
@@ -36689,6 +36976,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8491839174367328271
 GameObject:
   m_ObjectHideFlags: 0
@@ -36796,6 +37086,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8581930069436641332
 GameObject:
   m_ObjectHideFlags: 0
@@ -37022,6 +37315,9 @@ MonoBehaviour:
   damage: 5
   animator: {fileID: 0}
   triggerAttack: Attack
+  healthBase: {fileID: 0}
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  _originalColor: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &8907460375546801521
 GameObject:
   m_ObjectHideFlags: 0
