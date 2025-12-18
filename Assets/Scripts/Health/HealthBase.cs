@@ -23,6 +23,12 @@ public class HealthBase : MonoBehaviour
         }
 
     }
+    private void Start()
+    {
+        _currentHealth = startHealth;
+        _isDead = false;
+    }
+
     private void Init()
     {
         _isDead = false;
@@ -35,8 +41,11 @@ public class HealthBase : MonoBehaviour
 
         _currentHealth -= damage;
 
+        Debug.Log($"{gameObject.name} received {damage} damage. Current health: {_currentHealth}");
+
         if (_currentHealth <= 0)
         {
+            Debug.Log($"{gameObject.name} Reached zero health. Calling Kill()");
             kill();
         }
 
@@ -52,8 +61,17 @@ public class HealthBase : MonoBehaviour
 
         if (destroyOnKill)
         {
+            Debug.Log($"Destroing {gameObject.name} now.");
             Destroy(gameObject, delayToDestroy);
         }
+        else
+        {
+            Debug.LogWarning($"{gameObject.name} He died, but 'destroyOnKill' is unchecked!");
+        }
+    }
+    public float GetCurrentHealth()
+    {
+        return _currentHealth;
     }
 }
 

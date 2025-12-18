@@ -7,18 +7,19 @@ using DG.Tweening;
 public class FlashColor : MonoBehaviour
 {
     public List<SpriteRenderer> spriteRenderers;
-    public Color color1 = Color.red;
+    public Color flashColor = Color.yellow;
     public float duration = 0.1f;
+
+    private List<Color> _originalColors = new List<Color>();
+    private EnemyBase _enemyBase;
     private Tween _currentTween;
 
-    private void OnValidate()
+    private void Start()
     {
-
-        spriteRenderers = new List<SpriteRenderer>();
-
-        foreach (var child in GetComponentsInChildren<SpriteRenderer>() )
+        _enemyBase = GetComponent<EnemyBase>();
+        foreach (var sprite in spriteRenderers)
         {
-           spriteRenderers.Add(child);
+            _originalColors.Add(sprite.color);
         }
     }
 
@@ -31,19 +32,35 @@ public class FlashColor : MonoBehaviour
     }
     public void Flash()
     {
+        DOTween.Kill(this.gameObject);
 
-        if(_currentTween != null)
+        for (int i = 0; i < spriteRenderers.Count; i++)
         {
-          _currentTween.Kill();
-          spriteRenderers.ForEach(i => i.color = Color.white);
+            var sprite = spriteRenderers[i];
+            Color targetColor = _originalColors[i];
 
+            if (_enemyBase != null && _enemyBase.IsFrozen())
+            {
+                targetColor = _enemyBase.freezeColor;
+            }
+
+            sprite.DOColor(flashColor, duration)
+                  .SetLoops(2, LoopType.Yoyo)
+                  .OnComplete(() => {
+               
+                      sprite.color = (_enemyBase != null && _enemyBase.IsFrozen()) ? _enemyBase.freezeColor : _originalColors[spriteRenderers.IndexOf(sprite)];
+                  })
+                  .SetId(this.gameObject);
         }
+    }
+    private void OnValidate()
+    {
 
-        foreach (var spriteRenderer in spriteRenderers)
-        {
-            _currentTween = spriteRenderer.DOColor(color1, duration).SetLoops(2, LoopType.Yoyo);
-    
-        }
+        spriteRenderers = new List<SpriteRenderer>(GetComponentsInChildren<SpriteRenderer>());
 
+        //foreach (var child in GetComponentsInChildren<SpriteRenderer>())
+        //{
+        //   spriteRenderers.Add(child);
+        //}
     }
 }
