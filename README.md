@@ -34,3 +34,11 @@ The coin sprite was enhanced with refined 3D edge lines and new particle effects
 
 ## December 17th, 2025
 Implementation of the weapon collection and projectile firing system. A container-based prefab structure was introduced for the projectiles to ensure that the animations (managed by the Animator) flip correctly based on the player's direction via localScale. A new 'Weapon' folder was created to house the three essential scripts: InventoryBase (handles collection and equipping logic), ProjectileBase (defines projectile movement), and WeaponBase (manages shooting mechanics and cooldowns). A particle system was also added to the collectible item for better visual feedback during pickup.
+
+### Implementation of the Ice Wand & Combat System Improvements (EXTRA).
+
+#### Ice Wand Mechanics: Implementation of a projectile system with a 15% probability-based freeze effect using Random.Range. 
+#### Physics & Prefabs: Reorganized projectiles into a Container-based structure to fix Animator flip issues. Added Rigidbody2D (Kinematic) and Triggers to ensure correct collision detection with enemies. 
+#### Freeze Logic: Created a freezing state that paralyzes enemy movement (RigidbodyType2D) and animations (animator.speed) for a set duration. 
+#### Feedback: Integrated FlashColor (DOTween) with the freeze state to ensure sprites return to their correct variant colors (e.g., Red Slime) instead of the original prefab color. NOTE: This part still has some errors when the enemy is hit or frozen, the transition is not yet perfect, it's possible to see the colors of the original preview and not its variations. (NEEDS FIXING!) 
+#### Bug Fixes: Resolved NullReferenceException by updating prefab references in the WeaponBase and improving component communication.
