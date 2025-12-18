@@ -37,8 +37,8 @@ Implementation of the weapon collection and projectile firing system. A containe
 
 ### Implementation of the Ice Wand & Combat System Improvements (EXTRA).
 
-#### Ice Wand Mechanics: Implementation of a projectile system with a 15% probability-based freeze effect using Random.Range. 
-#### Physics & Prefabs: Reorganized projectiles into a Container-based structure to fix Animator flip issues. Added Rigidbody2D (Kinematic) and Triggers to ensure correct collision detection with enemies. 
+#### Ice Wand Mechanics: Implemented a projectile system with a 15% probability-based freeze effect using Random.Range.
+#### Physics & Prefabs: Reorganized projectiles into a Container-based structure to fix Animator flip issues. Added Rigidbody2D (Kinematic) and Triggers to ensure correct collision detection.
 #### Freeze Logic: Created a freezing state that paralyzes enemy movement (RigidbodyType2D) and animations (animator.speed) for a set duration. 
-#### Feedback: Integrated FlashColor (DOTween) with the freeze state to ensure sprites return to their correct variant colors (e.g., Red Slime) instead of the original prefab color. NOTE: This part still has some errors when the enemy is hit or frozen, the transition is not yet perfect, it's possible to see the colors of the original preview and not its variations. (NEEDS FIXING!) 
+#### Feedback & Colors: Integrated FlashColor (DOTween) with the freeze state to ensure sprites return to their correct colors. NOTE: Some color transition issues persist when hitting frozen enemies, occasionally showing the original prefab colors instead of variants. (NEEDS FIXING!)
 #### Bug Fixes: Resolved NullReferenceException by updating prefab references in the WeaponBase and improving component communication.
