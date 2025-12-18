@@ -48,6 +48,9 @@ MonoBehaviour:
   direction: {x: 0, y: 0}
   timeToDestroy: 2.4
   side: 1
+  damageAmount: 1
+  freezeChance: 15
+  freezeDuration: 2
 --- !u!1001 &283540304953230195
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58,7 +61,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1947755519865696850, guid: e2b3cd5890130e2409537b7504b96cf3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.012653351
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 1947755519865696850, guid: e2b3cd5890130e2409537b7504b96cf3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -99,6 +102,14 @@ PrefabInstance:
     - target: {fileID: 2481750137168219343, guid: e2b3cd5890130e2409537b7504b96cf3, type: 3}
       propertyPath: m_Name
       value: Projectile
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910203833609624226, guid: e2b3cd5890130e2409537b7504b96cf3, type: 3}
+      propertyPath: m_Radius
+      value: 0.98229486
+      objectReference: {fileID: 0}
+    - target: {fileID: 8910203833609624226, guid: e2b3cd5890130e2409537b7504b96cf3, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.5652385
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

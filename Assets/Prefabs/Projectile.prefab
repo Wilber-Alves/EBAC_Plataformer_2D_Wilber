@@ -898,6 +898,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1947755519865696850}
   - component: {fileID: 8910203833609624226}
+  - component: {fileID: 4599865363245752435}
   - component: {fileID: 645024837967811900}
   - component: {fileID: 4803697380226253215}
   - component: {fileID: 9198292932190930223}
@@ -964,12 +965,39 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.012760997, y: 0.006381154}
-  m_Radius: 0.40429533
+  m_Offset: {x: 0.5652385, y: 0.0063811447}
+  m_Radius: 0.98229486
+--- !u!50 &4599865363245752435
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2481750137168219343}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!210 &645024837967811900
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -997,6 +1025,9 @@ MonoBehaviour:
   direction: {x: 10, y: 0}
   timeToDestroy: 2.4
   side: 1
+  damageAmount: 1
+  freezeChance: 15
+  freezeDuration: 2
 --- !u!95 &9198292932190930223
 Animator:
   serializedVersion: 7
