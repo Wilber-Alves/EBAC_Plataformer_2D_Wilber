@@ -67,4 +67,24 @@ Key Learnings:
 * Spatial Awareness: Using Raycasting for environmental sensing.
 * Physics Interaction: Managing complex interactions between different body types and layers.
 
+## December 19th, 2025
+
+### AI Patrol Optimization, Advanced Freeze Mechanics, and UI Integration
+
+#### Finalized Patrol System: 
+Successfully synchronized the GroundCheck sensor with the enemy's initial movement direction. Resolved the "floating/flipping" bug by aligning the sensor's local position with the logic-driven _direction variable.
+#### Enhanced Freeze & Platform Mechanics:
+Implemented a visual pulsing feedback using DOTween that triggers during the final second of the 3-second freeze duration, notifying the player of the imminent thaw.
+Fixed a rendering bug by targeting the specific Body GameObject within the rigging hierarchy, ensuring variant colors (Red/Blue Slimes) are correctly preserved and restored after freezing.
+#### Enabled "Frozen Platforms": 
+Confirmed that enemies act as solid terrain without dealing damage while frozen, allowing for strategic navigation.
+#### Currency & UI Implementation:
+Integrated the ItemManager (Singleton) with a new CoinUIController using TextMeshPro.
+The UI now dynamically updates in real-time as the player collects coins, using string formatting (ToString("F0")) to handle the fractional coin increment logic.
+#### Code Architecture: Unified the interaction between ProjectileBase and EnemyReactive using GetComponentInParent, ensuring the "Ice Shatter" mechanic (breaking ice with a second shot) works across all enemy types in the hierarchy.
+
+Key Learnings:
+* Coordinate Systems: Deep understanding of Local vs. Global space during sprite flipping and translation.
+* State-Driven UI: Implementing the Observer-like pattern where the Manager notifies the UI of state changes.
+* Rigging Manipulation: Learning how to isolate specific mesh parts (Body) for color manipulation without affecting the entire skeletal structure.
 
