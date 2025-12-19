@@ -116,7 +116,6 @@ GameObject:
   - component: {fileID: 4460868169130457868}
   - component: {fileID: 7900819403084096578}
   - component: {fileID: 9204342001461966568}
-  - component: {fileID: 6588777530805522457}
   m_Layer: 3
   m_Name: Crystal_Spike_Plataforms (1)
   m_TagString: Untagged
@@ -215,19 +214,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 7
---- !u!114 &6588777530805522457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5199093854338114617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cfefbf319c4a349b2e6fcbcb416562, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 5
 --- !u!1 &7639569748624621868
 GameObject:
   m_ObjectHideFlags: 0

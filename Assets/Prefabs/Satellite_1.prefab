@@ -105,10 +105,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2464118016884713451}
   - component: {fileID: 6218027598393333866}
-  - component: {fileID: 5566292883311015249}
-  - component: {fileID: 3189032859028336193}
+  - component: {fileID: 1480661286235644068}
   - component: {fileID: 727892984653753395}
-  - component: {fileID: -7925627337931472510}
+  - component: {fileID: 3189032859028336193}
+  - component: {fileID: 5566292883311015249}
   m_Layer: 0
   m_Name: Satellite_1
   m_TagString: Enemy
@@ -124,7 +124,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2815626559312337703}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -154,7 +154,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5566292883311015249
+--- !u!114 &1480661286235644068
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,29 +163,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 2815626559312337703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ca960f7f3d5c6d24e96fb270a41a0231, type: 3}
+  m_Script: {fileID: 11500000, guid: 64f8d180fcee9a144b47164f81c2fd96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageAmount: 10
+  healthBase: {fileID: 727892984653753395}
   animator: {fileID: 6218027598393333866}
-  keyToTrigger: 97
-  keyToReset: 115
-  triggerToPlay: FlyBool
---- !u!114 &3189032859028336193
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2815626559312337703}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b2a355f42b7e2640b57cf1a9f832931, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteRenderers:
-  - {fileID: 7129536931174443878}
-  color1: {r: 1, g: 0, b: 0, a: 1}
-  duration: 0.1
+  triggerAttack: Attack
+  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  speed: 2
+  wallDetectionRange: 0.5
 --- !u!114 &727892984653753395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202,7 +189,7 @@ MonoBehaviour:
   destroyOnKill: 1
   delayToDestroy: 0
   _flashColor: {fileID: 3189032859028336193}
---- !u!114 &-7925627337931472510
+--- !u!114 &3189032859028336193
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -211,14 +198,29 @@ MonoBehaviour:
   m_GameObject: {fileID: 2815626559312337703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cfefbf319c4a349b2e6fcbcb416562, type: 3}
+  m_Script: {fileID: 11500000, guid: 0b2a355f42b7e2640b57cf1a9f832931, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  spriteRenderers:
+  - {fileID: 7129536931174443878}
+  flashColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  duration: 0.1
+--- !u!114 &5566292883311015249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815626559312337703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ca960f7f3d5c6d24e96fb270a41a0231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   animator: {fileID: 6218027598393333866}
-  triggerAttack: Attack
-  healthBase: {fileID: 727892984653753395}
-  freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
+  keyToTrigger: 97
+  keyToReset: 115
+  triggerToPlay: FlyBool
 --- !u!1 &5276803280816694757
 GameObject:
   m_ObjectHideFlags: 0
