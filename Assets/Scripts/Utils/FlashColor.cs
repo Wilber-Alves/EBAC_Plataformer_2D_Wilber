@@ -11,12 +11,12 @@ public class FlashColor : MonoBehaviour
     public float duration = 0.1f;
 
     private List<Color> _originalColors = new List<Color>();
-    private EnemyBase _enemyBase;
+    private EnemyReactive _enemyBase;
     private Tween _currentTween;
 
     private void Start()
     {
-        _enemyBase = GetComponent<EnemyBase>();
+        _enemyBase = GetComponent<EnemyReactive>();
         foreach (var sprite in spriteRenderers)
         {
             _originalColors.Add(sprite.color);
