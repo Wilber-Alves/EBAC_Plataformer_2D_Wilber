@@ -50,26 +50,21 @@ Implementation of the weapon collection and projectile firing system. A containe
 "Cladistic Code Architecture": 
 NOTE: "Applying cladistic (biology) concepts to the organization of the class hierarchy facilitated the understanding of the scope of variables and the inheritance of behaviors between passive and reactive enemies."
 
-Refactored the EnemyBase system into a hierarchical structure (Inheritance) to separate behaviors:
-
-*EnemyBase (Ancestral/Passive): Basic touch damage.
-*EnemyReactive: Adds health, freezing, and animation states.
-*EnemyPatrol: Adds locomotion and edge detection.
-*EnemyPatrolJumper: Specialized vertical movement (Slime Blue).
-
+#### Refactored the EnemyBase system into a hierarchical structure (Inheritance) to separate behaviors:
+* EnemyBase (Ancestral/Passive): Basic touch damage.
+* EnemyReactive: Adds health, freezing, and animation states.
+* EnemyPatrol: Adds locomotion and edge detection.
+* EnemyPatrolJumper: Specialized vertical movement (Slime Blue).
 #### Intelligent Patrol System: 
 Implemented edge detection using Raycast2D and LayerMasks to prevent enemies from falling off platforms and avoid self-collision issues.
-
 #### Combat Polish: 
-*Modified EnemyBase to filter damage using Tags, preventing enemies from hurting each other or ice spikes.
-*Adjusted collision logic to allow frozen enemies to act as solid platforms without dealing damage to the player.
-
-### Bug Fixes: 
+* Modified EnemyBase to filter damage using Tags, preventing enemies from hurting each other or ice spikes.
+* Adjusted collision logic to allow frozen enemies to act as solid platforms without dealing damage to the player.
+#### Bug Fixes: 
 Resolved NullReferenceExceptions and context errors by promoting the _isFrozen variable to the base class, ensuring visibility across all derived species.
-
 Key Learnings:
-*OOP Principles: Practical application of Inheritance (virtual/override) and access modifiers (protected).
-*Spatial Awareness: Using Raycasting for environmental sensing.
-*Physics Interaction: Managing complex interactions between different body types and layers.
+* OOP Principles: Practical application of Inheritance (virtual/override) and access modifiers (protected).
+* Spatial Awareness: Using Raycasting for environmental sensing.
+* Physics Interaction: Managing complex interactions between different body types and layers.
 
 
