@@ -81,7 +81,8 @@ Confirmed that enemies act as solid terrain without dealing damage while frozen,
 #### Currency & UI Implementation:
 Integrated the ItemManager (Singleton) with a new CoinUIController using TextMeshPro.
 The UI now dynamically updates in real-time as the player collects coins, using string formatting (ToString("F0")) to handle the fractional coin increment logic.
-#### Code Architecture: Unified the interaction between ProjectileBase and EnemyReactive using GetComponentInParent, ensuring the "Ice Shatter" mechanic (breaking ice with a second shot) works across all enemy types in the hierarchy.
+#### Code Architecture: 
+Unified the interaction between ProjectileBase and EnemyReactive using GetComponentInParent, ensuring the "Ice Shatter" mechanic (breaking ice with a second shot) works across all enemy types in the hierarchy.
 
 Key Learnings:
 * Coordinate Systems: Deep understanding of Local vs. Global space during sprite flipping and translation.
