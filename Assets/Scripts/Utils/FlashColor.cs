@@ -11,12 +11,12 @@ public class FlashColor : MonoBehaviour
     public float duration = 0.1f;
 
     private List<Color> _originalColors = new List<Color>();
-    private EnemyReactive _enemyBase;
+    private EnemyReactive _enemyReactive;
     private Tween _currentTween;
 
     private void Start()
     {
-        _enemyBase = GetComponent<EnemyReactive>();
+        _enemyReactive = GetComponent<EnemyReactive>();
         foreach (var sprite in spriteRenderers)
         {
             _originalColors.Add(sprite.color);
@@ -36,19 +36,20 @@ public class FlashColor : MonoBehaviour
 
         for (int i = 0; i < spriteRenderers.Count; i++)
         {
-            var sprite = spriteRenderers[i];
-            Color targetColor = _originalColors[i];
+            Color original = _originalColors[i];
 
-            if (_enemyBase != null && _enemyBase.IsFrozen())
-            {
-                targetColor = _enemyBase.freezeColor;
-            }
-
-            sprite.DOColor(flashColor, duration)
+            spriteRenderers[i].DOColor(flashColor, duration)
                   .SetLoops(2, LoopType.Yoyo)
                   .OnComplete(() => {
-               
-                      sprite.color = (_enemyBase != null && _enemyBase.IsFrozen()) ? _enemyBase.freezeColor : _originalColors[spriteRenderers.IndexOf(sprite)];
+                      // check if the enemy is frozen to set the correct color
+                      if (_enemyReactive != null && _enemyReactive.IsFrozen())
+                      {
+                          spriteRenderers[i].color = _enemyReactive.freezeColor;
+                      }
+                      else
+                      {
+                          spriteRenderers[i].color = original; // return to original color
+                      }
                   })
                   .SetId(this.gameObject);
         }
@@ -63,4 +64,18 @@ public class FlashColor : MonoBehaviour
         //   spriteRenderers.Add(child);
         //}
     }
+
+    public void ResetAllColors()
+    {
+        for (int i = 0; i < spriteRenderers.Count; i++)
+        {
+            spriteRenderers[i].color = _originalColors[i];
+        }
+    }
+
+    public Color GetOriginalColor(int index)
+    {
+        return _originalColors[index];
+    }
+
 }
