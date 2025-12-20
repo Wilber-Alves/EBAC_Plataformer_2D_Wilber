@@ -32,8 +32,9 @@ public class ProjectileBase : MonoBehaviour
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
-    { 
+    {
         EnemyReactive enemy = collision.GetComponent<EnemyReactive>();
+        if (enemy == null) enemy = collision.GetComponentInParent<EnemyReactive>();
 
         if (enemy != null)
         {
@@ -41,19 +42,25 @@ public class ProjectileBase : MonoBehaviour
             if (enemy.IsFrozen())
             {
                 enemy.Unfreeze();
+                Destroy(gameObject);
+                return;
             }
             else
+            
+            // If not frozen, apply damage and possibly freeze.
+            enemy.Damage(damageAmount);
+
+            if (Random.Range(0f, 100f) <= freezeChance)
             {
-                // If not frozen, apply damage and possibly freeze.
-                enemy.Damage(damageAmount);
-
-                if (Random.Range(0f, 100f) <= freezeChance)
-                {
-                    enemy.Freeze(freezeDuration);
-                    Debug.Log("I'll freeze your bones!");
-                }
+                enemy.Freeze(freezeDuration);
+                Debug.Log("I'll freeze your bones!");
             }
+            
 
+            Destroy(gameObject);
+        }
+        else if (collision.CompareTag("Ground"))
+        {
             Destroy(gameObject);
         }
     }

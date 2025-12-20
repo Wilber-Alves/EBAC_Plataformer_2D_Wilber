@@ -7,20 +7,22 @@ public class EnemyPatrol : EnemyReactive
     public float speed = 2f;
     public Transform groundCheck;
     public float groundDistance = 0.5f;
+    public float wallDetectionRange = 0.3f;
     protected int _direction = 1;
-    public LayerMask Ground;
-
+    public LayerMask groundLayer;
+    
     protected virtual void Update()
     {
         if (_isFrozen) return;
 
-        // verify if there is ground ahead
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundCheck.position, Vector2.down, groundDistance, Ground);
-        Debug.DrawRay(groundCheck.position, Vector2.down * groundDistance, Color.red);
+        
+        RaycastHit2D groundInfo = Physics2D.Raycast(groundCheck.position, Vector2.down, groundDistance, groundLayer);
+        RaycastHit2D wallInfo = Physics2D.Raycast(groundCheck.position, Vector2.right * _direction, wallDetectionRange, groundLayer); 
 
-     
-        // if no ground, flip direction        
-        if (groundInfo.collider == false)
+        Debug.DrawRay(groundCheck.position, Vector2.down * groundDistance, Color.red);
+        Debug.DrawRay(groundCheck.position, Vector2.right * _direction * wallDetectionRange, Color.blue); 
+        
+        if (groundInfo.collider == null || wallInfo.collider == true)
         {
             Flip();
         }
@@ -30,7 +32,7 @@ public class EnemyPatrol : EnemyReactive
 
     protected virtual void Move()
     {
-        transform.Translate(Vector2.right * speed * Time.deltaTime);
+        transform.Translate(Vector2.right * _direction * speed * Time.deltaTime);
     }
 
     protected void Flip()

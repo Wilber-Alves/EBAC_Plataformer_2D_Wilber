@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6319989355582908221}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -24,14 +24,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 401881751800762495}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.11377904, w: 0.99350613}
+  m_LocalRotation: {x: -0, y: -0, z: -0.10413026, w: 0.99456364}
   m_LocalPosition: {x: 1.2985569, y: 0.0000004863236, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4624502511896388287}
   m_Father: {fileID: 4669320878860749890}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -13.066}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -11.954}
 --- !u!1 &1181660824066943001
 GameObject:
   m_ObjectHideFlags: 0
@@ -41,7 +41,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4624502511896388287}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -72,7 +72,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2449655354459166845}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,11 +105,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2464118016884713451}
   - component: {fileID: 6218027598393333866}
-  - component: {fileID: 1480661286235644068}
+  - component: {fileID: 6171448562845834143}
   - component: {fileID: 727892984653753395}
   - component: {fileID: 3189032859028336193}
   - component: {fileID: 5566292883311015249}
-  m_Layer: 0
+  - component: {fileID: 8854156244804235629}
+  m_Layer: 7
   m_Name: Satellite_1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -154,7 +155,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1480661286235644068
+--- !u!114 &6171448562845834143
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -163,7 +164,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2815626559312337703}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64f8d180fcee9a144b47164f81c2fd96, type: 3}
+  m_Script: {fileID: 11500000, guid: 26d183fbd6d34ac42b68cb5741251fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 10
@@ -171,8 +172,6 @@ MonoBehaviour:
   animator: {fileID: 6218027598393333866}
   triggerAttack: Attack
   freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
-  speed: 2
-  wallDetectionRange: 0.5
 --- !u!114 &727892984653753395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,6 +220,52 @@ MonoBehaviour:
   keyToTrigger: 97
   keyToReset: 115
   triggerToPlay: FlyBool
+--- !u!61 &8854156244804235629
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2815626559312337703}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0.052580953, y: 0.22509658}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.429414, y: 2.4132082}
+  m_EdgeRadius: 0
 --- !u!1 &5276803280816694757
 GameObject:
   m_ObjectHideFlags: 0
@@ -232,7 +277,7 @@ GameObject:
   - component: {fileID: 8698489033494379722}
   - component: {fileID: 7129536931174443878}
   - component: {fileID: 7112758441650560750}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: SPR_Satellite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +393,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6077633122734632625}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -380,7 +425,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5791933011151201209}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +456,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6522597856919120108}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -442,7 +487,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4669320878860749890}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -474,7 +519,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7645513419482495793}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: bone_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
