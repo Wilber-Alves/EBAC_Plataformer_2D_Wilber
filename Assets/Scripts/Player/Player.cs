@@ -1,11 +1,14 @@
+
 using UnityEngine;
 using DG.Tweening;
+using Unity.Jobs;
 
 public class Player : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
     private Vector2 originalScale;
     private bool _isAlive = true;
+    public HealthBase healthBase;
 
     [Header("Speed Settings")]
     public Vector2 friction = new Vector2(-.1f, 0);
@@ -40,6 +43,26 @@ public class Player : MonoBehaviour
     public string triggerJumpLanding = "JumpLanding";
     public string triggerDeath = "Death";
     public Animator animator;
+
+    
+
+    private void Awake()
+    {
+        if(healthBase != null)
+        {
+            healthBase.OnKill += OnPlayerKill;
+        }
+    }
+
+    private void OnPlayerKill()
+    {
+        healthBase.OnKill -= OnPlayerKill; // only for remove the callback
+        // some modifications
+        _isAlive = false; // this will stop the movimento on Update
+        if (animator != null ) animator.SetTrigger(triggerDeath);
+        myRigidbody.linearVelocity = Vector2.zero;
+        myRigidbody.simulated = false; // player will stop collision.
+    }
 
     void Start()
     {
@@ -197,5 +220,10 @@ public class Player : MonoBehaviour
         {
             _isGrounded = false;
         }
+    }
+
+    public void DestroyMe()
+    { 
+        Destroy(gameObject);
     }
 }
