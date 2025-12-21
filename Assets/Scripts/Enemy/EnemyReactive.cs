@@ -1,3 +1,4 @@
+
 using DG.Tweening;
 using System.Collections;
 using UnityEngine;
@@ -8,6 +9,7 @@ public class EnemyReactive : EnemyBase
     public HealthBase healthBase;
     public Animator animator;
     public string triggerAttack = "Attack";
+    public string triggerDeath = "Death";
 
     [Header("Freeze Settings")]
     public Color freezeColor = new Color(0.5f, 0.8f, 1.0f);
@@ -23,9 +25,13 @@ public class EnemyReactive : EnemyBase
         if (_spriteRenderer != null) _originalColor = _spriteRenderer.color;
     }
 
-    protected override void OnAttack()
+    protected override void PlayAttackAnimation()
     {
         if (animator != null) animator.SetTrigger(triggerAttack);
+    }
+    protected override void PlayDeathAnimation()
+    {
+        if (animator != null) animator.SetTrigger(triggerDeath);
     }
 
     public virtual void Damage(int amount)

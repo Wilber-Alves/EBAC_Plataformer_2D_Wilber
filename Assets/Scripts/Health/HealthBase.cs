@@ -1,8 +1,11 @@
-using System.Runtime.CompilerServices;
+
+using System;
 using UnityEngine;
 
 public class HealthBase : MonoBehaviour
 {
+    public Action OnKill;
+
     public int startHealth = 10;
     
     public bool destroyOnKill = false;
@@ -11,7 +14,7 @@ public class HealthBase : MonoBehaviour
     private float _currentHealth;
     private bool _isDead = false;
 
-    public FlashColor _flashColor;
+    [SerializeField] public FlashColor _flashColor;
 
     private void Awake()
     {
@@ -55,19 +58,27 @@ public class HealthBase : MonoBehaviour
         }
 
     }
+    public void AddHealth(int amount)
+    {
+        if (_isDead) return;
+
+        _currentHealth += amount;
+
+        
+        if (_currentHealth > startHealth)
+        {
+            _currentHealth = startHealth;
+        }
+
+        Debug.Log($"{gameObject.name} healed {amount}. Current health: {_currentHealth}");
+
+        
+    }
+
     private void kill()
     {
         _isDead = true;
-
-        if (destroyOnKill)
-        {
-            Debug.Log($"Destroing {gameObject.name} now.");
-            Destroy(gameObject, delayToDestroy);
-        }
-        else
-        {
-            Debug.LogWarning($"{gameObject.name} He died, but 'destroyOnKill' is unchecked!");
-        }
+        OnKill?.Invoke();
     }
     public float GetCurrentHealth()
     {
