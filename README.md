@@ -78,7 +78,7 @@ Implemented a visual pulsing feedback using DOTween that triggers during the fin
 Fixed a rendering bug by targeting the specific Body GameObject within the rigging hierarchy, ensuring variant colors (Red/Blue Slimes) are correctly preserved and restored after freezing.
 #### Enabled "Frozen Platforms": 
 Confirmed that enemies act as solid terrain without dealing damage while frozen, allowing for strategic navigation.
-#### Currency & UI Implementation:
+#### Coins & UI Implementation:
 Integrated the ItemManager (Singleton) with a new CoinUIController using TextMeshPro.
 The UI now dynamically updates in real-time as the player collects coins, using string formatting (ToString("F0")) to handle the fractional coin increment logic.
 #### Code Architecture: 
