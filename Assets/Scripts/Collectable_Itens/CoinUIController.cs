@@ -17,7 +17,7 @@ public class CoinUIController : MonoBehaviour
         if (coinText != null)
         {
  
-            coinText.text = ItemManager.Instance.totalCoins.ToString("F0");
+            coinText.text = ItemManager.Instance.totalCoins.valueFloat.ToString("F0");
         }
     }
 }
