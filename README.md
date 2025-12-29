@@ -94,3 +94,10 @@ Key Learnings:
 ### AI Awareness, Advanced Death Mechanics & Restorative Systems
 
 Implemented a dynamic chase AI, enabling enemies to switch between patrol and run states upon detecting the player while maintaining platform safety through edge detection. I refactored the death mechanics for both player and enemies using event-driven logic (Action OnKill), ensuring animations play fully before object destruction and resolving initialization bugs. Additionally, I expanded the collectibles system by creating the HeartContainer, integrating a restorative health logic into HealthBase that allows players to recover HP capped at their maximum starting health.(Module 16 submission - Creating a 2D platformer - Items and enemies/ NOTE: The activity began on December 9th and ended on December 20th.).
+
+## December, 28th, 2025
+
+### Scriptable Objects & UI Refactoring
+
+Implemented Scriptable Objects to centralize data for collectible items (coins), decoupling game values from specific scenes. Developed specialized scripts to handle dynamic UI updates for both float and int data types. Additionally, refactored the Scene and Item Manager scripts to integrate with this new architecture, improving system modularity and maintenance.
+
