@@ -2084,7 +2084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a841bc481d405a046856aed374aeeeb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalCoins: 0
+  totalCoins: {fileID: 11400000, guid: 10a4a62b99965dc4ca75c811bf39853e, type: 2}
 --- !u!4 &164917163
 Transform:
   m_ObjectHideFlags: 0
@@ -13810,6 +13810,7 @@ GameObject:
   - component: {fileID: 851490901}
   - component: {fileID: 851490903}
   - component: {fileID: 851490902}
+  - component: {fileID: 851490904}
   m_Layer: 5
   m_Name: CoinText
   m_TagString: Untagged
@@ -13935,6 +13936,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 851490900}
   m_CullTransparentMesh: 1
+--- !u!114 &851490904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 851490900}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27b7b5f6b9026dd4a9e8fb96e4f66a4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soFloat: {fileID: 11400000, guid: 10a4a62b99965dc4ca75c811bf39853e, type: 2}
+  uiTextFloatValue: {fileID: 851490902}
 --- !u!4 &853659064 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}

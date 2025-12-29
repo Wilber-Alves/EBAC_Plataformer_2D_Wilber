@@ -4,7 +4,7 @@ using UnityEngine;
 public class ItemManager : Singleton<ItemManager>
 {
 
-    public float totalCoins;
+    public SOFloat totalCoins;
     private CoinUIController _uiController;
 
     void Start()
@@ -14,12 +14,12 @@ public class ItemManager : Singleton<ItemManager>
     }
     private void Reset()
     {
-        totalCoins = 0;
+        totalCoins.valueFloat = 0;
         if (_uiController != null) _uiController.UpdateCoinText();
     }
     public void AddCoins(float amount = 0.5f)
     {
-        totalCoins += amount;
+        totalCoins.valueFloat += amount;
         if (_uiController != null)
         {
             _uiController.UpdateCoinText();
