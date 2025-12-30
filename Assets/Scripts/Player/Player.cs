@@ -1,40 +1,41 @@
-
 using UnityEngine;
 using DG.Tweening;
-using Unity.Jobs;
 
 public class Player : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
-    private Vector2 originalScale;
-    private bool _isAlive = true;
     public HealthBase healthBase;
+    public Animator animator;
+    public LayerMask groundLayer;
 
-    [Header("Speed Settings")]
+    [Header("Scriptable Objects from Player - Speed and Animation settings")]
+    public SOPlayer soPlayer;
+
+    /*[Header("Speed Settings")]
     public Vector2 friction = new Vector2(-.1f, 0);
     public float speed = 10.0f;
     public float speedRun = 13.0f;
-    public float forceJump = 20.0f;
-    public float doubleJumpForce = 15.0f;
 
     [Header("Animation Settings")]
     public Vector2 idleScale = new Vector2(1f, 1f);
     public Vector2 jumpScale = new Vector2(0.75f, 1.5f);
     public Vector2 landScale = new Vector2(1.5f, 0.75f);
-    public float jumpScaleDuration = 0.2f;
-    public float landScaleDuration = 0.1f;
-    public float landDelay = 0.05f;
     public Ease jumpEase = Ease.OutQuad;
     public Ease landEase = Ease.InQuad;
     public Ease delayEase = Ease.InBack;
 
-    public LayerMask groundLayer;
+    public float jumpScaleDuration = 0.02f;
+    public float landScaleDuration = 0.08f;
+    public float landDelay = 0.05f;
+    public float forceJump = 30.0f;
+    public float doubleJumpForce = 25.0f;*/
 
-    private float _currentSpeed;
-    private float _horizontalInput;
-    private float _facingDirection = 1f;
-    private bool _isGrounded;
-    private bool _canDoubleJump = false;
+    /*[Header("Scriptable Objects for Animation Settings - float variables")]
+    public SOFloat soJumpScaleDuration;
+    public SOFloat soLandScaleDuration;
+    public SOFloat soLandDelay;
+    public SOFloat soForceJump;
+    public SOFloat soDoubleJumpForce;*/
 
     [Header("Animation Player Parameters")]
     public string boolRun = "Run";
@@ -42,9 +43,14 @@ public class Player : MonoBehaviour
     public string boolJumpUp = "JumpUp";
     public string triggerJumpLanding = "JumpLanding";
     public string triggerDeath = "Death";
-    public Animator animator;
-
     
+    private float _facingDirection = 1f;
+    private Vector2 originalScale;
+    private float _currentSpeed;
+    private float _horizontalInput;
+    private bool _isGrounded;
+    private bool _canDoubleJump = false;
+    private bool _isAlive = true;
 
     private void Awake()
     {
@@ -75,24 +81,24 @@ public class Player : MonoBehaviour
         myRigidbody.DOKill();
         DG.Tweening.Sequence jumpSequence = DOTween.Sequence();
 
-        Vector2 scaledJump = new Vector2(jumpScale.x * _facingDirection, jumpScale.y);
-        Vector2 scaledIdle = new Vector2(idleScale.x * _facingDirection, idleScale.y);
+        Vector2 scaledJump = new Vector2(soPlayer.jumpScale.x * _facingDirection, soPlayer.jumpScale.y);
+        Vector2 scaledIdle = new Vector2(soPlayer.idleScale.x * _facingDirection, soPlayer.idleScale.y);
 
-        jumpSequence.Append(myRigidbody.transform.DOScale(scaledJump, jumpScaleDuration).SetEase(jumpEase));
-        jumpSequence.Append(myRigidbody.transform.DOScale(scaledIdle, jumpScaleDuration).SetEase(Ease.OutQuad));
+        jumpSequence.Append(myRigidbody.transform.DOScale(scaledJump, soPlayer.jumpScaleDuration).SetEase(soPlayer.jumpEase));
+        jumpSequence.Append(myRigidbody.transform.DOScale(scaledIdle, soPlayer.jumpScaleDuration).SetEase(Ease.OutQuad));
     }
     private void HandleScaleLanded()
     {
         myRigidbody.DOKill();
         DG.Tweening.Sequence landSequence = DOTween.Sequence();
 
-        Vector2 landScaleWithDirection = new Vector2(landScale.x * _facingDirection, landScale.y);
+        Vector2 landScaleWithDirection = new Vector2(soPlayer.landScale.x * _facingDirection, soPlayer.landScale.y);
         Vector2 originalScaleWithDirection = new Vector2(originalScale.x * _facingDirection, originalScale.y);
-        Vector2 idleScaleWithDirection = new Vector2(idleScale.x * _facingDirection, idleScale.y);
+        Vector2 idleScaleWithDirection = new Vector2(soPlayer.idleScale.x * _facingDirection, soPlayer.idleScale.y);
 
-        landSequence.Append(myRigidbody.transform.DOScale(landScaleWithDirection, landScaleDuration).SetEase(landEase));
-        landSequence.Append(myRigidbody.transform.DOScale(originalScaleWithDirection, landScaleDuration).SetEase(Ease.InQuad));
-        landSequence.Append(myRigidbody.transform.DOScale(idleScaleWithDirection, landDelay).SetEase(Ease.InBack));
+        landSequence.Append(myRigidbody.transform.DOScale(landScaleWithDirection, soPlayer.jumpScaleDuration).SetEase(soPlayer.landEase));
+        landSequence.Append(myRigidbody.transform.DOScale(originalScaleWithDirection, soPlayer.landScaleDuration).SetEase(Ease.InQuad));
+        landSequence.Append(myRigidbody.transform.DOScale(idleScaleWithDirection, soPlayer.landDelay).SetEase(Ease.InBack));
     }
 
     void Update()
@@ -133,7 +139,7 @@ public class Player : MonoBehaviour
             
             if (_isGrounded)
             {
-                myRigidbody.linearVelocity = new Vector2(myRigidbody.linearVelocity.x, forceJump);
+                myRigidbody.linearVelocity = new Vector2(myRigidbody.linearVelocity.x, soPlayer.forceJump);
                 _canDoubleJump = true;
                 _isGrounded = false;
                 HandleScaleJump();
@@ -141,7 +147,7 @@ public class Player : MonoBehaviour
           
             else if (_canDoubleJump)
             {
-                myRigidbody.linearVelocity = new Vector2(myRigidbody.linearVelocity.x, doubleJumpForce);
+                myRigidbody.linearVelocity = new Vector2(myRigidbody.linearVelocity.x, soPlayer.doubleJumpForce);
                 _canDoubleJump = false; 
                 HandleScaleJump();
             }
@@ -151,17 +157,17 @@ public class Player : MonoBehaviour
     private void HandleMovement()
     {
     
-        _currentSpeed = Input.GetKey(KeyCode.Z) ? speedRun : speed;
+        _currentSpeed = Input.GetKey(KeyCode.Z) ? soPlayer.speedRun : soPlayer.speed;
 
 
         if (Input.GetKey(KeyCode.Z))
         {
-            _currentSpeed = speedRun;
+            _currentSpeed = soPlayer.speedRun;
             animator.speed = 2.0f;
         }
         else
         {
-            _currentSpeed = speed;
+            _currentSpeed = soPlayer.speed;
             animator.speed = 1.0f;
         }
 

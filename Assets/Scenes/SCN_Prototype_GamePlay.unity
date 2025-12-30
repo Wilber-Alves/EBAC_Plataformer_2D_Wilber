@@ -23837,29 +23837,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRigidbody: {fileID: 1638859785}
   healthBase: {fileID: 1638859790}
-  friction: {x: -0.1, y: 0}
-  speed: 10
-  speedRun: 13
-  forceJump: 30
-  doubleJumpForce: 25
-  idleScale: {x: 1, y: 1}
-  jumpScale: {x: 0.75, y: 1.5}
-  landScale: {x: 1.5, y: 0.75}
-  jumpScaleDuration: 0.02
-  landScaleDuration: 0.08
-  landDelay: 0.05
-  jumpEase: 6
-  landEase: 5
-  delayEase: 26
+  animator: {fileID: 591152729}
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
+  soPlayer: {fileID: 11400000, guid: e4a9fc90fd0e5174d87f91502ebef0a1, type: 2}
   boolRun: Run
   boolJumpDown: JumpDown
   boolJumpUp: JumpUp
   triggerJumpLanding: JumpLanding
   triggerDeath: Death
-  animator: {fileID: 591152729}
 --- !u!114 &1638859790
 MonoBehaviour:
   m_ObjectHideFlags: 0
