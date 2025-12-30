@@ -5,7 +5,8 @@ public class Player : MonoBehaviour
 {
     public Rigidbody2D myRigidbody;
     public HealthBase healthBase;
-    public Animator animator;
+    //public Animator animator;
+
     public LayerMask groundLayer;
 
     [Header("Scriptable Objects from Player - Speed and Animation settings")]
@@ -51,13 +52,17 @@ public class Player : MonoBehaviour
     private bool _isGrounded;
     private bool _canDoubleJump = false;
     private bool _isAlive = true;
+    private Animator _currentPlayer;
 
     private void Awake()
     {
-        if(healthBase != null)
+        
+        if (healthBase != null)
         {
             healthBase.OnKill += OnPlayerKill;
         }
+
+        _currentPlayer = Instantiate(soPlayer.player, transform);
     }
 
     private void OnPlayerKill()
@@ -65,7 +70,7 @@ public class Player : MonoBehaviour
         healthBase.OnKill -= OnPlayerKill; // only for remove the callback
         // some modifications
         _isAlive = false; // this will stop the movimento on Update
-        if (animator != null ) animator.SetTrigger(triggerDeath);
+        if (_currentPlayer != null ) _currentPlayer.SetTrigger(triggerDeath);
         myRigidbody.linearVelocity = Vector2.zero;
         myRigidbody.simulated = false; // player will stop collision.
     }
@@ -116,20 +121,20 @@ public class Player : MonoBehaviour
         {
             if (myRigidbody.linearVelocity.y > 0.1f)
             {
-                animator.SetBool(boolJumpUp, true);
-                animator.SetBool(boolJumpDown, false);
+                _currentPlayer.SetBool(boolJumpUp, true);
+                _currentPlayer.SetBool(boolJumpDown, false);
             }
             else if (myRigidbody.linearVelocity.y < -0.1f)
             {
-                animator.SetBool(boolJumpUp, false);
-                animator.SetBool(boolJumpDown, true);
+                _currentPlayer.SetBool(boolJumpUp, false);
+                _currentPlayer.SetBool(boolJumpDown, true);
             }
         }
         else
         {
             
-            animator.SetBool(boolJumpUp, false);
-            animator.SetBool(boolJumpDown, false);
+            _currentPlayer.SetBool(boolJumpUp, false);
+            _currentPlayer.SetBool(boolJumpDown, false);
         }
     }
     private void HandleJump()
@@ -163,12 +168,12 @@ public class Player : MonoBehaviour
         if (Input.GetKey(KeyCode.Z))
         {
             _currentSpeed = soPlayer.speedRun;
-            animator.speed = 2.0f;
+            _currentPlayer.speed = 2.0f;
         }
         else
         {
             _currentSpeed = soPlayer.speed;
-            animator.speed = 1.0f;
+            _currentPlayer.speed = 1.0f;
         }
 
         _horizontalInput = 0;
@@ -194,11 +199,11 @@ public class Player : MonoBehaviour
             {
                 myRigidbody.transform.DOScaleX(targetScaleX, 0.005f);
             }
-            animator.SetBool(boolRun, true);
+            _currentPlayer.SetBool(boolRun, true);
         }
         else
         {
-            animator.SetBool(boolRun, false);
+            _currentPlayer.SetBool(boolRun, false);
         }
 
     }
@@ -214,7 +219,7 @@ public class Player : MonoBehaviour
                 _isGrounded = true;
                 _canDoubleJump = true; 
                 HandleScaleLanded();
-                animator.SetTrigger(triggerJumpLanding);
+                _currentPlayer.SetTrigger(triggerJumpLanding);
             }
         }
     }

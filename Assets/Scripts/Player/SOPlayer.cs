@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class SOPlayer : ScriptableObject
 {
+    public Animator player;
+
+
     [Header("Speed Settings")]
     public Vector2 friction = new Vector2(-.1f, 0);
     public float speed = 10.0f;
