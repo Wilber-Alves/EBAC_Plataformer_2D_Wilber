@@ -101,3 +101,8 @@ Implemented a dynamic chase AI, enabling enemies to switch between patrol and ru
 
 Implemented Scriptable Objects to centralize data for collectible items (coins), decoupling game values from specific scenes. Developed specialized scripts to handle dynamic UI updates for both float and int data types. Additionally, refactored the Scene and Item Manager scripts to integrate with this new architecture, improving system modularity and maintenance.
 
+## December 29th, 2025
+
+### Implementation of Scriptable Objects for animation and code refactoring. 
+
+Scriptable Objects were developed to manage the character's jump animations, utilizing five distinct float variables for precise control. A new script was created to centralize player variables, specifically focusing on movement speed and jump animation logic. A significant refactoring was performed on the player script to integrate these Scriptable Objects, which now allows for the handling of two different movement states. Additionally, the boss script received minor formatting updates for better code readability, and the scene underwent subtle environmental modifications.
