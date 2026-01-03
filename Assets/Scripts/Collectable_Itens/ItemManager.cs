@@ -21,7 +21,7 @@ public class ItemManager : Singleton<ItemManager>
         if (totalCoins != null)
         {
             totalCoins.valueFloat += amount;
-            Debug.Log("Moeda coletada! Total: " + totalCoins.valueFloat);
+            Debug.Log("Colected Coin! Total: " + totalCoins.valueFloat);
         }
     }
 }
