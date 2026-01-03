@@ -118,13 +118,13 @@ NOTE: The bug from the December 29th has been fixed.
 * #### Unified HUD Architecture:
 Developed a centralized HUDController utilizing Scriptable Objects to monitor multiple game states. Implemented a dynamic Health Bar (UI Slider) and a Coin counter, ensuring complete decoupling between the gameplay logic and the User Interface.
 * #### Inventory Visualization:
-Created a dynamic inventory slot within the HUD that triggers visual feedback (Weapon Icon) upon the collection of the Ice Wand, utilizing static state checks for real-time updates.
+Created simple inventory slot within the HUD that triggers visual feedback (Weapon Icon) upon the collection of the Ice Wand, utilizing static state checks for real-time updates.
 * #### Invincibility Frames (I-Frames) & Visual Feedback: 
 Implemented a momentary invincibility system in HealthBase to enhance player experience. Developed a specialized "Blink" effect that manages sprite transparency (Alpha) while preserving original prefab colors and details through a color caching system.
 * #### Hierarchical Bug Fixes:
 Refactored the EnemyBase and EnemyReactive inheritance chain to resolve object destruction conflicts. Fixed a critical bug where reactive enemies (Satellites) would persist in the scene after death, ensuring proper memory cleanup and animation synchronization.
 * #### System Refactoring:
-Fully integrated ItemManager and HealthBase with the new Scriptable Object architecture, removing legacy UI scripts and eliminating fractional coin increment logic ("0.5 fix") for a robust integer-based collection system.
+Integration of ItemManager and HealthBase with the new Scriptable Objects. NOTE: In the item manager script, the `public void AddCoins` function needs to display the amount value as a float, because the `int` was including double the collected coins, even when colliding with only one coin. To solve the problem, I had to include an increment of 0.5, so that for each coin collected, the game adds 0.5 twice to form a value of 1 in the HUD.
 
 (Module 17 submission - Creating a 2D platformer - Working with Scriptable Objects/ NOTE: The activity began on December 28th and ended on January 3th).
 
