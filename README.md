@@ -109,3 +109,22 @@ Scriptable Objects were developed to manage the character's jump animations, uti
 
 #### Creation of a variant player prefab and Update player, health and destroy helper scripts: 
 Minor adjustments to the code to try and prevent the player from shooting themselves. With the implementation of the scriptable objects for the player variants, unfortunately the player can not longer activate the weapon sprite and without it, they cannot shoot. When manually activated in the Unity inspector, it does not recognize the character's direction and always shoots in the same direction. This did not occur before; I have to fix this bug.(NEEDS FIXING!)
+
+## January 3rd, 2026
+
+### Advanced HUD Integration, I-Frames & Systems Synchronization
+NOTE: The bug from the December 29th has been fixed.
+
+* #### Unified HUD Architecture:
+Developed a centralized HUDController utilizing Scriptable Objects to monitor multiple game states. Implemented a dynamic Health Bar (UI Slider) and a Coin counter, ensuring complete decoupling between the gameplay logic and the User Interface.
+* #### Inventory Visualization:
+Created a dynamic inventory slot within the HUD that triggers visual feedback (Weapon Icon) upon the collection of the Ice Wand, utilizing static state checks for real-time updates.
+* #### Invincibility Frames (I-Frames) & Visual Feedback: 
+Implemented a momentary invincibility system in HealthBase to enhance player experience. Developed a specialized "Blink" effect that manages sprite transparency (Alpha) while preserving original prefab colors and details through a color caching system.
+* #### Hierarchical Bug Fixes:
+Refactored the EnemyBase and EnemyReactive inheritance chain to resolve object destruction conflicts. Fixed a critical bug where reactive enemies (Satellites) would persist in the scene after death, ensuring proper memory cleanup and animation synchronization.
+* #### System Refactoring:
+Fully integrated ItemManager and HealthBase with the new Scriptable Object architecture, removing legacy UI scripts and eliminating fractional coin increment logic ("0.5 fix") for a robust integer-based collection system.
+
+(Module 17 submission - Creating a 2D platformer - Working with Scriptable Objects/ NOTE: The activity began on December 28th and ended on January 3th).
+
