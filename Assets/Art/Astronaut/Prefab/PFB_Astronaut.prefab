@@ -1474,6 +1474,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5000455042689278068}
     m_Modifications:
+    - target: {fileID: 598585922764155169, guid: d9215c8f34876d041812ebd9e92745b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2663510441291498445, guid: d9215c8f34876d041812ebd9e92745b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.8
@@ -1481,6 +1485,14 @@ PrefabInstance:
     - target: {fileID: 2663510441291498445, guid: d9215c8f34876d041812ebd9e92745b4, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.916
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719676524460467300, guid: d9215c8f34876d041812ebd9e92745b4, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3719676524460467300, guid: d9215c8f34876d041812ebd9e92745b4, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: 7200978122194551238, guid: d9215c8f34876d041812ebd9e92745b4, type: 3}
       propertyPath: prefabProjectile
