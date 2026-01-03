@@ -8,7 +8,7 @@ public class EnemyBase : MonoBehaviour
     protected bool _isFrozen = false;
     protected bool _isDead = false;
     public HealthBase HealthBase;
-    public float timeToDestroy = 117f;
+    public float timeToDestroy = 1.0f;
    
     private void Awake()
     {
@@ -19,10 +19,23 @@ public class EnemyBase : MonoBehaviour
     {
         HealthBase.OnKill -= OnEnemyKill; // only for remove the callback
         _isDead = true;
+
+        var animator = GetComponentInChildren<Animator>();
+        if (animator != null) animator.speed = 1;
+
+        gameObject.layer = LayerMask.NameToLayer("Default");
+
         PlayDeathAnimation(); // call trigger "Death"
 
         var rb = GetComponent<Rigidbody2D>();
-        if (rb != null) rb.simulated = false; // enemies stop damage
+        if (rb != null)
+        {
+            rb.linearVelocity = Vector2.zero;
+            rb.simulated = false;
+        }
+
+        var colliders = GetComponentsInChildren<Collider2D>();
+        foreach (var c in colliders) c.enabled = false;
 
         Destroy(gameObject, timeToDestroy); // destroy after animation time
     }

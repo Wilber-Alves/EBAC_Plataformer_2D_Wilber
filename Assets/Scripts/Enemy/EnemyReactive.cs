@@ -21,6 +21,7 @@ public class EnemyReactive : EnemyBase
 
     protected virtual void Start()
     {
+        HealthBase = healthBase;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         if (_spriteRenderer != null) _originalColor = _spriteRenderer.color;
     }

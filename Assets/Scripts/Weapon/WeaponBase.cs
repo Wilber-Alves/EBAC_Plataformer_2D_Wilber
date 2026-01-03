@@ -7,9 +7,15 @@ public class WeaponBase : MonoBehaviour
     public Transform positionToShoot;
     public float timeBetweenShots = 0.3f;
     public Transform playerSideReference;
+    private Player _player;
 
 
-    private Coroutine _currentCoroutine;    
+    private Coroutine _currentCoroutine;
+    
+    void Start()
+    {
+        _player = GetComponentInParent<Player>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -43,8 +49,25 @@ public class WeaponBase : MonoBehaviour
 
     public void Shoot()
     {
+        if (positionToShoot == null) return;
+
         var projectile = Instantiate(prefabProjectile, positionToShoot.position, Quaternion.identity);
-        projectile.side = Mathf.Sign(playerSideReference.localScale.x); // Note: Mathf.Sign checks which way the player's body is currently facing. If the 'X scale' is positive, you move to the right (1). If it's negative, you move to the left (-1).
+
+        projectile.side = _player.GetFacingDirection();
     }
+
+    public void SetupWeaponReferences(GameObject visualClone)
+    {
+        Transform[] transforms = visualClone.GetComponentsInChildren<Transform>(true);
+        foreach (var t in transforms)
+        {
+            
+            if (t.name.ToLower() == "ShootPosition")
+            {
+                positionToShoot = t;
+            }
+        }
+    }
+
 
 }
