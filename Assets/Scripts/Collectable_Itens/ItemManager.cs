@@ -3,26 +3,25 @@ using UnityEngine;
 
 public class ItemManager : Singleton<ItemManager>
 {
-
     public SOFloat totalCoins;
-    private CoinUIController _uiController;
 
     void Start()
     {
         Reset();
-        _uiController = Object.FindAnyObjectByType<CoinUIController>();
     }
+
     private void Reset()
     {
-        totalCoins.valueFloat = 0;
-        if (_uiController != null) _uiController.UpdateCoinText();
+        if (totalCoins != null)
+            totalCoins.valueFloat = 0;
     }
+
     public void AddCoins(float amount = 0.5f)
     {
-        totalCoins.valueFloat += amount;
-        if (_uiController != null)
+        if (totalCoins != null)
         {
-            _uiController.UpdateCoinText();
+            totalCoins.valueFloat += amount;
+            Debug.Log("Moeda coletada! Total: " + totalCoins.valueFloat);
         }
     }
 }

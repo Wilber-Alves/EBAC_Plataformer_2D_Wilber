@@ -17,11 +17,21 @@ public class FlashColor : MonoBehaviour
     private void Start()
     {
         _enemyReactive = GetComponent<EnemyReactive>();
+        SetupFlash();
+    }
+
+    public void SetupFlash()
+    {
+        spriteRenderers.Clear();
+        _originalColors.Clear();
+        spriteRenderers = GetComponentsInChildren<SpriteRenderer>(true).ToList();
+
         foreach (var sprite in spriteRenderers)
         {
             _originalColors.Add(sprite.color);
         }
     }
+
 
     private void Update()
     {
@@ -32,26 +42,27 @@ public class FlashColor : MonoBehaviour
     }
     public void Flash()
     {
-        DOTween.Kill(this.gameObject);
+        if (spriteRenderers.Count == 0) SetupFlash();
 
         for (int i = 0; i < spriteRenderers.Count; i++)
         {
-            Color original = _originalColors[i];
+            if (spriteRenderers[i] == null) continue;
+
+            int index = i;
+            spriteRenderers[i].DOKill();
 
             spriteRenderers[i].DOColor(flashColor, duration)
                   .SetLoops(2, LoopType.Yoyo)
                   .OnComplete(() => {
-                      // check if the enemy is frozen to set the correct color
                       if (_enemyReactive != null && _enemyReactive.IsFrozen())
                       {
-                          spriteRenderers[i].color = _enemyReactive.freezeColor;
+                          spriteRenderers[index].color = _enemyReactive.freezeColor;
                       }
                       else
                       {
-                          spriteRenderers[i].color = original; // return to original color
+                          spriteRenderers[index].color = _originalColors[index];
                       }
-                  })
-                  .SetId(this.gameObject);
+                  });
         }
     }
     private void OnValidate()

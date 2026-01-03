@@ -53,6 +53,7 @@ public class Player : MonoBehaviour
     private bool _canDoubleJump = false;
     private bool _isAlive = true;
     private Animator _currentPlayer;
+    private WeaponBase _weaponBase;
 
     private void Awake()
     {
@@ -63,6 +64,18 @@ public class Player : MonoBehaviour
         }
 
         _currentPlayer = Instantiate(soPlayer.player, transform);
+
+        FlashColor flash = GetComponent<FlashColor>();
+        if (flash != null) flash.SetupFlash();
+
+        _weaponBase = GetComponent<WeaponBase>();
+        if (_weaponBase != null)
+        {
+            _weaponBase.SetupWeaponReferences(_currentPlayer.gameObject);
+        }
+
+
+
     }
 
     private void OnPlayerKill()
@@ -237,4 +250,15 @@ public class Player : MonoBehaviour
     { 
         Destroy(gameObject);
     }
+
+    public Animator GetCurrentAnimator()
+    {
+        return _currentPlayer;
+    }
+
+    public float GetFacingDirection()
+    {
+        return Mathf.Sign(transform.localScale.x);
+    }
+
 }

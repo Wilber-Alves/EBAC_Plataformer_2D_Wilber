@@ -1,18 +1,24 @@
 
 using System;
+using System.Data;
 using UnityEngine;
 
 public class HealthBase : MonoBehaviour
 {
     public Action OnKill;
+    public Action OnDamage;
 
-    public int startHealth = 10;
-    
+    [Header ("UI / Scriptable Object Reference")]
+
+    public SOFloat_Health SOFloat_Health;
+
+    public float startHealth = 30.0f;
     public bool destroyOnKill = false;
     public float delayToDestroy = 0f;
 
     private float _currentHealth;
     private bool _isDead = false;
+    private bool _isImmune = false;
 
     [SerializeField] public FlashColor _flashColor;
 
@@ -30,6 +36,7 @@ public class HealthBase : MonoBehaviour
     {
         _currentHealth = startHealth;
         _isDead = false;
+        UpdateSO();
     }
 
     private void Init()
@@ -38,11 +45,14 @@ public class HealthBase : MonoBehaviour
         _currentHealth = startHealth;
     }
 
-    public void Damage(int damage)
-    { 
-        if (_isDead) return;
+    public void Damage(float damage)
+    {
+        if (_isDead || _isImmune) return;
 
         _currentHealth -= damage;
+        UpdateSO();
+
+        OnDamage?.Invoke();
 
         Debug.Log($"{gameObject.name} received {damage} damage. Current health: {_currentHealth}");
 
@@ -58,7 +68,7 @@ public class HealthBase : MonoBehaviour
         }
 
     }
-    public void AddHealth(int amount)
+    public void AddHealth(float amount = 2.5f)
     {
         if (_isDead) return;
 
@@ -70,9 +80,18 @@ public class HealthBase : MonoBehaviour
             _currentHealth = startHealth;
         }
 
+        UpdateSO();
+
         Debug.Log($"{gameObject.name} healed {amount}. Current health: {_currentHealth}");
 
         
+    }
+    private void UpdateSO()
+    {
+        if (SOFloat_Health != null)
+        {
+            SOFloat_Health.value = _currentHealth;
+        }
     }
 
     private void kill()
@@ -80,6 +99,12 @@ public class HealthBase : MonoBehaviour
         _isDead = true;
         OnKill?.Invoke();
     }
+
+    public void SetImmunity(bool status)
+    {
+        _isImmune = status;
+    }
+
     public float GetCurrentHealth()
     {
         return _currentHealth;
