@@ -128,3 +128,12 @@ Integration of ItemManager and HealthBase with the new Scriptable Objects. NOTE:
 
 (Module 17 submission - Creating a 2D platformer - Working with Scriptable Objects/ NOTE: The activity began on December 28th and ended on January 3th).
 
+### Inclusion of new particle visual effects - VFX
+
+Coin particles, heart container, weapon, and projectiles have been updated, with sprites created in Aseprite. A sparkle sprite and a snowflake sprite were added. Minor adjustments were made to the scene, such as changing overlapping layers and adjusting all prefabs containing the particle system.
+
+<img width="96" height="96" alt="VFX_SnowFlake_Sprite" src="https://github.com/user-attachments/assets/a6fbb671-7348-4805-90b9-5d3aa1be428f" />
+
+<img width="96" height="96" alt="VFX_Sparkle_Sprite" src="https://github.com/user-attachments/assets/16ae79f2-e855-4609-9d72-4c8766ec06d8" />
+
+
