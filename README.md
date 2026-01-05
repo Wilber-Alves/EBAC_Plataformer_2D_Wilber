@@ -136,10 +136,11 @@ Coin particles, heart container, weapon, and projectiles have been updated, with
 
 <img width="96" height="96" alt="VFX_Sparkle_Sprite" src="https://github.com/user-attachments/assets/16ae79f2-e855-4609-9d72-4c8766ec06d8" />
 
-A dust sprite was created in Aseprite to provide the visual effect for the character's running. Minor modifications to the scenery were made solely to test the visual effects, bringing the items closer to the character's spawn point.
+A dust sprite (dark and white) was created in Aseprite to provide the visual effect for the character's running. Minor modifications to the scenery were made solely to test the visual effects, bringing the items closer to the character's spawn point.
 
-<img width="150" height="100" alt="image" src="https://github.com/user-attachments/assets/a2c19c8c-1a6b-4133-8f77-efcd2b9544cd" />
+<img width="150" height="96" alt="image" src="https://github.com/user-attachments/assets/a2c19c8c-1a6b-4133-8f77-efcd2b9544cd" />
 
 <img width="96" height="96" alt="VFX_Dust_Sprite" src="https://github.com/user-attachments/assets/611e155d-966b-499c-b627-a2f003b2b88b" />
 
+<img width="96" height="96" alt="VFX_WhiteDust_Sprite" src="https://github.com/user-attachments/assets/7650218f-355e-46c5-9785-55b3032f9c7e" />
 
