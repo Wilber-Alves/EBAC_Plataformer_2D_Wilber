@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 24e85867ee269d5428a57a7189035f69
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - myRigidbody: {instanceID: 0}
+  - healthBase: {instanceID: 0}
+  - soPlayer: {fileID: 11400000, guid: e4a9fc90fd0e5174d87f91502ebef0a1, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

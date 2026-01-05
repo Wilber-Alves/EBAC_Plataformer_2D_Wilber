@@ -22642,7 +22642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -23.21, y: -42.940002}
+  m_AnchoredPosition: {x: -12.66, y: -42.940002}
   m_SizeDelta: {x: 14.296402, y: 4.3265}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1543857821
@@ -22692,8 +22692,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -22730,7 +22730,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -13.718748, y: -7.8933773, z: -13.795382, w: -8.425882}
+  m_margin: {x: -45.288322, y: -37.557835, z: -13.795382, w: -8.425882}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -24309,7 +24309,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  soPlayer: {fileID: 11400000, guid: e4a9fc90fd0e5174d87f91502ebef0a1, type: 2}
+  soPlayer: {fileID: 11400000, guid: 5c71801173e21b54386192fe1cdcfb53, type: 2}
   boolRun: Run
   boolJumpDown: JumpDown
   boolJumpUp: JumpUp
@@ -24371,7 +24371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1891b4d5cca6f084e9cf7bf41c1bb341, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Weapon: {fileID: 0}
+  Weapon: {fileID: 8347121392017519097, guid: d9215c8f34876d041812ebd9e92745b4, type: 3}
   collectEffect: {fileID: 4357645257972964829, guid: 5eca308eb6f09a34baa1006f0693a3f3, type: 3}
 --- !u!114 &1638859794
 MonoBehaviour:

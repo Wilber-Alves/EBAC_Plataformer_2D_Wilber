@@ -1,2 +1,13 @@
 fileFormatVersion: 2
 guid: 63131a042227795409e04c5cf459827c
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - SOFloat_Health: {fileID: 11400000, guid: f1f719ab95c490d409429676cb948114, type: 2}
+  - _flashColor: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
