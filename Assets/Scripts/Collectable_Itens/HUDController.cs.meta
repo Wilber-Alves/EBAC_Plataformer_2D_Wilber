@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: 1cf52009d9a9dca428ab293660942c4a
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - healthSlider: {instanceID: 0}
+  - SOFloat_Health: {fileID: 11400000, guid: f1f719ab95c490d409429676cb948114, type: 2}
+  - weaponIcon: {instanceID: 0}
+  - coinText: {instanceID: 0}
+  - soFloat: {fileID: 11400000, guid: 10a4a62b99965dc4ca75c811bf39853e, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
