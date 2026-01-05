@@ -1629,6 +1629,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9137263939849548227, guid: 3b8047d8419297a4597b6ad2f7a00f97, type: 3}
+      propertyPath: InitialModule.startColor.minGradient.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137263939849548227, guid: 3b8047d8419297a4597b6ad2f7a00f97, type: 3}
+      propertyPath: InitialModule.startColor.minGradient.key0.g
+      value: 0.0450387
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137263939849548227, guid: 3b8047d8419297a4597b6ad2f7a00f97, type: 3}
+      propertyPath: InitialModule.startColor.minGradient.key0.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137263939849548227, guid: 3b8047d8419297a4597b6ad2f7a00f97, type: 3}
+      propertyPath: InitialModule.startColor.minGradient.key1.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137263939849548227, guid: 3b8047d8419297a4597b6ad2f7a00f97, type: 3}
+      propertyPath: InitialModule.startColor.minGradient.key1.g
+      value: 0.72122526
+      objectReference: {fileID: 0}
+    - target: {fileID: 9137263939849548227, guid: 3b8047d8419297a4597b6ad2f7a00f97, type: 3}
+      propertyPath: InitialModule.startColor.minGradient.key1.r
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
