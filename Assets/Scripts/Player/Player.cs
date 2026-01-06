@@ -44,7 +44,16 @@ public class Player : MonoBehaviour
     public string boolJumpUp = "JumpUp";
     public string triggerJumpLanding = "JumpLanding";
     public string triggerDeath = "Death";
-    
+
+    [Header("VFX Settings")]
+    public GameObject walkDustVFXPrefab;     
+    public GameObject doubleJumpVFXPrefab;    
+    public float dustStepRate = 0.2f;       
+    private float _dustTimer;
+
+    [Header("Run VFX Settings")]
+    public ParticleSystem runDustVFX; 
+
     private float _facingDirection = 1f;
     private Vector2 originalScale;
     private float _currentSpeed;
@@ -73,9 +82,6 @@ public class Player : MonoBehaviour
         {
             _weaponBase.SetupWeaponReferences(_currentPlayer.gameObject);
         }
-
-
-
     }
 
     private void OnPlayerKill()
@@ -161,24 +167,47 @@ public class Player : MonoBehaviour
                 _canDoubleJump = true;
                 _isGrounded = false;
                 HandleScaleJump();
+               
             }
           
             else if (_canDoubleJump)
             {
                 myRigidbody.linearVelocity = new Vector2(myRigidbody.linearVelocity.x, soPlayer.doubleJumpForce);
-                _canDoubleJump = false; 
+                _canDoubleJump = false;
                 HandleScaleJump();
+                playDoubleJumpVFX();
+
             }
         }
     }
 
+    private void playDoubleJumpVFX()
+    {
+
+        if (doubleJumpVFXPrefab != null)
+        {
+            // Instancia na posição atual do player
+            GameObject vfx = Instantiate(doubleJumpVFXPrefab, transform.position, Quaternion.identity);
+            // Destrói o objeto após 1 segundo (ajuste esse tempo para a duração da sua partícula)
+            Destroy(vfx, 1f);
+        }
+    }
+    private void CreateWalkDust()
+    {
+        if (walkDustVFXPrefab != null)
+        {
+            // Instancia o prefab da poeira na posição do player
+            GameObject vfx = Instantiate(walkDustVFXPrefab, transform.position, Quaternion.identity);
+            // Destrói o objeto após 1 segundo
+            Destroy(vfx, 1f);
+        }
+    }
     private void HandleMovement()
     {
-    
-        _currentSpeed = Input.GetKey(KeyCode.Z) ? soPlayer.speedRun : soPlayer.speed;
+        bool isRunning = Input.GetKey(KeyCode.Z);
+        _currentSpeed = isRunning ? soPlayer.speedRun : soPlayer.speed;
 
-
-        if (Input.GetKey(KeyCode.Z))
+        if (isRunning)
         {
             _currentSpeed = soPlayer.speedRun;
             _currentPlayer.speed = 2.0f;
@@ -190,6 +219,7 @@ public class Player : MonoBehaviour
         }
 
         _horizontalInput = 0;
+
         if (Input.GetKey(KeyCode.RightArrow))
         {
             _horizontalInput = 1;
@@ -202,9 +232,39 @@ public class Player : MonoBehaviour
 
         myRigidbody.linearVelocity = new Vector2(_horizontalInput * _currentSpeed, myRigidbody.linearVelocity.y);
 
-  
+        if (runDustVFX != null)
+        {
+            // condition: running (Z) + horizontal movement + grounded
+            if (isRunning && _horizontalInput != 0 && _isGrounded)
+            {
+                // if not playing, play the VFX
+                if (!runDustVFX.isPlaying)
+                {
+                    runDustVFX.Play();
+                }
+            }
+            else
+            {
+                // if stopped running or not grounded, stop the VFX
+                if (runDustVFX.isPlaying)
+                {
+                    runDustVFX.Stop();
+                }
+            }
+        }
+
         if (_horizontalInput != 0)
         {
+            if (_isGrounded) // only create dust when is grounded, becaus the last implemented the player can create dust infinity.
+            {
+                _dustTimer += Time.deltaTime;
+                if (_dustTimer <= 0)
+                {
+                    CreateWalkDust();
+                    _dustTimer = dustStepRate;
+                }
+            }
+
             _facingDirection = Mathf.Sign(_horizontalInput);
             float targetScaleX = originalScale.x * _facingDirection;
 
@@ -233,11 +293,12 @@ public class Player : MonoBehaviour
                 _canDoubleJump = true; 
                 HandleScaleLanded();
                 _currentPlayer.SetTrigger(triggerJumpLanding);
+                CreateWalkDust(); // extra dust VFX when land
             }
         }
     }
 
-    void OnCollisionExit2D(Collision2D collision)
+    void OnCollisionExit2D(Collision2D collision) 
     {
       
         if (((1 << collision.gameObject.layer) & groundLayer) != 0)
