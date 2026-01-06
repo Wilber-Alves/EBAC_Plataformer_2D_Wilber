@@ -146,5 +146,7 @@ A dust sprite (dark and white) was created in Aseprite to provide the visual eff
 
 ## January, 6th, 2026
 
-Particle System (Dust) Implementation: Added dust visual effects (VFX) for running mechanics (activated with Z + Directional), double jump, and landing. The commit includes updated player and variant prefabs, as well as animation triggering logic. Note: Adjustments to the running dust layer sorting are pending.
+### Particle System (Dust) Implementation 
+
+Added dust visual effects (VFX) for running mechanics (activated with Z + Directional), double jump, and landing. The commit includes updated player and variant prefabs, as well as animation triggering logic. Note: Adjustments to the running dust layer sorting are pending.
 
