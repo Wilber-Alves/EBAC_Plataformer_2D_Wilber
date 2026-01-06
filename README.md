@@ -144,3 +144,7 @@ A dust sprite (dark and white) was created in Aseprite to provide the visual eff
 
 <img width="96" height="96" alt="VFX_WhiteDust_Sprite" src="https://github.com/user-attachments/assets/7650218f-355e-46c5-9785-55b3032f9c7e" />
 
+## January, 6th, 2026
+
+Particle System (Dust) Implementation: Added dust visual effects (VFX) for running mechanics (activated with Z + Directional), double jump, and landing. The commit includes updated player and variant prefabs, as well as animation triggering logic. Note: Adjustments to the running dust layer sorting are pending.
+
