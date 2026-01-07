@@ -150,3 +150,9 @@ A dust sprite (dark and white) was created in Aseprite to provide the visual eff
 
 Added dust visual effects (VFX) for running mechanics (activated with Z + Directional), double jump, and landing. The commit includes updated player and variant prefabs, as well as animation triggering logic. Note: Adjustments to the running dust layer sorting are pending.
 
+## January, 7th, 2026
+
+### VFX System Overhaul & Ice Jump Implementation:
+
+Transitioned from a direct particle reference to a prefab-based instantiation system for all movement VFX (run, walk, and jump), resolving previous rendering issues and improving performance. This update introduces a new "Double Ice Jump" effect by integrating ice crystals into the dust material and includes fine-tuning of particle behaviors for sprinting and basic movement, alongside minor scene adjustments for better visual consistency.
+
