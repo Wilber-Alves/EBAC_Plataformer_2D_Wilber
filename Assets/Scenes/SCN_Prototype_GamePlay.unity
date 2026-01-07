@@ -24318,7 +24318,7 @@ MonoBehaviour:
   walkDustVFXPrefab: {fileID: 2057689577152507275, guid: 3b8047d8419297a4597b6ad2f7a00f97, type: 3}
   doubleJumpVFXPrefab: {fileID: 641726773152296448, guid: ddd5e41bb64417b49b1c75716ce428b1, type: 3}
   dustStepRate: 0.2
-  runDustVFX: {fileID: 9137263939849548227, guid: b675ff3417c6fb44ca565583723e8ec5, type: 3}
+  runDustVFXPrefab: {fileID: 2057689577152507275, guid: b675ff3417c6fb44ca565583723e8ec5, type: 3}
 --- !u!114 &1638859790
 MonoBehaviour:
   m_ObjectHideFlags: 0
