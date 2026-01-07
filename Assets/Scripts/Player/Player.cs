@@ -52,7 +52,7 @@ public class Player : MonoBehaviour
     private float _dustTimer;
 
     [Header("Run VFX Settings")]
-    public ParticleSystem runDustVFX; 
+    public  GameObject runDustVFXPrefab;
 
     private float _facingDirection = 1f;
     private Vector2 originalScale;
@@ -205,7 +205,8 @@ public class Player : MonoBehaviour
     private void HandleMovement()
     {
         bool isRunning = Input.GetKey(KeyCode.Z);
-        _currentSpeed = isRunning ? soPlayer.speedRun : soPlayer.speed;
+
+        // _currentSpeed = isRunning ? soPlayer.speedRun : soPlayer.speed; // another way to write the same logic in "if/else".
 
         if (isRunning)
         {
@@ -232,39 +233,47 @@ public class Player : MonoBehaviour
 
         myRigidbody.linearVelocity = new Vector2(_horizontalInput * _currentSpeed, myRigidbody.linearVelocity.y);
 
-        if (runDustVFX != null)
+        // states for the VFXs
+
+        bool isMoving = _horizontalInput != 0 && _isGrounded;
+        bool isSprinting = isMoving && isRunning;
+        bool isOnlyWalking = isMoving && !isRunning;
+
+        // VFX Run Dust for Z key + movement
+        if (isSprinting)
         {
-            // condition: running (Z) + horizontal movement + grounded
-            if (isRunning && _horizontalInput != 0 && _isGrounded)
+            _dustTimer -= Time.deltaTime;
+
+            if (_dustTimer <= 0)
             {
-                // if not playing, play the VFX
-                if (!runDustVFX.isPlaying)
+                // intantiate the dust VFX prefab
+                if (runDustVFXPrefab != null)
                 {
-                    runDustVFX.Play();
+                    Vector3 spawnPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z - 1f);
+                    GameObject vfx = Instantiate(runDustVFXPrefab, spawnPosition, Quaternion.identity);
+                    Destroy(vfx, 1f); // destroy after 1 second
                 }
+                _dustTimer = dustStepRate * 0.5f; // frequency of dust when running is more often
             }
-            else
+        }
+
+        // VFX Run Dust for movement (without Z key)
+        if (isOnlyWalking)
+        {
+            _dustTimer -= Time.deltaTime;
+            if (_dustTimer <= 0)
             {
-                // if stopped running or not grounded, stop the VFX
-                if (runDustVFX.isPlaying)
-                {
-                    runDustVFX.Stop();
-                }
+                CreateWalkDust();
+                _dustTimer = dustStepRate;
             }
+        }
+        else 
+        { 
+            _dustTimer = 0;
         }
 
         if (_horizontalInput != 0)
         {
-            if (_isGrounded) // only create dust when is grounded, becaus the last implemented the player can create dust infinity.
-            {
-                _dustTimer += Time.deltaTime;
-                if (_dustTimer <= 0)
-                {
-                    CreateWalkDust();
-                    _dustTimer = dustStepRate;
-                }
-            }
-
             _facingDirection = Mathf.Sign(_horizontalInput);
             float targetScaleX = originalScale.x * _facingDirection;
 
