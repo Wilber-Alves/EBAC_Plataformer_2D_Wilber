@@ -6601,6 +6601,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PFB_ParticleSystem_CoinBurst
       objectReference: {fileID: 0}
+    - target: {fileID: 5449074531042976975, guid: b82bbdec3862bc444a6813e962b3a3cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6432037354348412830, guid: b82bbdec3862bc444a6813e962b3a3cb, type: 3}
       propertyPath: playOnAwake
       value: 0
