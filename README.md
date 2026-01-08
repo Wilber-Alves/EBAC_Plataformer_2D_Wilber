@@ -188,7 +188,7 @@ Refactored the EnemyBase and EnemyReactive inheritance chain to resolve object d
 * #### System Refactoring:
 Integration of ItemManager and HealthBase with the new Scriptable Objects. NOTE: In the item manager script, the `public void AddCoins` function needs to display the amount value as a float, because the `int` was including double the collected coins, even when colliding with only one coin. To solve the problem, I had to include an increment of 0.5, so that for each coin collected, the game adds 0.5 twice to form a value of 1 in the HUD.
 
-(Module 17 submission - Creating a 2D platformer - Working with Scriptable Objects/ NOTE: The activity began on December 28th and ended on January 3th).
+(Module 17 submission - Creating a 2D platformer - Working with Scriptable Objects/ NOTE: The activity began on December 28th and ended on January 3rd).
 
 ### Inclusion of new particle visual effects - VFX
 
@@ -227,6 +227,8 @@ Added dust visual effects (VFX) for running mechanics (activated with Z + Direct
 Transitioned from a direct particle reference to a prefab-based instantiation system for all movement VFX (run, walk, and jump), resolving previous rendering issues and improving performance. This update introduces a new "Double Ice Jump" effect by integrating ice crystals into the dust material and includes fine-tuning of particle behaviors for sprinting and basic movement, alongside minor scene adjustments for better visual consistency.
 
 <img src="https://github.com/user-attachments/assets/f799ca8b-fa9d-49a0-91ba-4fca9d736ce3" width="350" title="Double Ice Jump - A temporary ice platform forms at the player's feet, allowing for a second jump."/>
+
+(Module 18 submission - Creating a 2D platformer - Adding Visual Effects (VFX)/ NOTE: The activity began on December 3rd and ended on January 7th).
 
 
 
