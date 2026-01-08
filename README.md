@@ -37,8 +37,17 @@ Updates have been made to the level design to test the character's jumping, runn
 ## December 9th, 2025 
 Updates collectible coins to the project, including coin sprites, a 3D coin prefab, and a dedicated folder for collectible items. Key features include an animation script for items with rotation and vertical movement, a base script for collision detection and item destruction, and a script for collecting coins that interacts with an ItemManager to track the collected amount. The ItemManager script monitors coin collection, though a known issue currently causes it to count two coins per collection instead of one (NEEDS FIXING). Collectible coins have also been added to the scene. Arts also added to the scene.
 
+ <img src= https://github.com/user-attachments/assets/47820ddd-4f16-4c8f-88e3-a40a48f50c43 width="1200" title="Prototype level design of the scene"/>
+
 ## December 12th, 2025
-The prototype level design was created using three new sprites made in Aseprite (Pixel art): an ice crystal, a cave, and a stone block. Animations were included for enemies and collectible items. NOTE: the same coin animation script was included for enemies, but the collection function was disabled. Access to the singleton was included in the item manager script. Furthermore, the coin counting problem was solved; it was enough to change the coin quantity variable (int to float) in the "Add Coins" function from an integer equal to 1 to a floating-point number equal to 0.5. Because if I can't understand why it's adding double, I'll force the logic to add half of that, to get 1, until I figure out the reason for the error. But it's solved. (PROBLEM SOLVED!).
+The prototype level design was created using three new sprites made in Aseprite (Pixel art): an ice crystal, a cave, and a stone block. 
+
+
+<img width="200" height="200" alt="Cristal_Spike" src="https://github.com/user-attachments/assets/41950bef-801c-4939-a5e1-65736632a339" />
+<img width="200" height="200" alt="Crystal_Cave" src="https://github.com/user-attachments/assets/c0a17d66-e195-4000-8689-ab8a9dd4b715" />
+<img width="200" height="200" alt="Plataform_Rock_Colors" src="https://github.com/user-attachments/assets/88ac2432-8f68-446a-8f3d-f8beb72fd4a8" />
+
+Animations were included for enemies and collectible items. NOTE: the same coin animation script was included for enemies, but the collection function was disabled. Access to the singleton was included in the item manager script. Furthermore, the coin counting problem was solved; it was enough to change the coin quantity variable (int to float) in the "Add Coins" function from an integer equal to 1 to a floating-point number equal to 0.5. Because if I can't understand why it's adding double, I'll force the logic to add half of that, to get 1, until I figure out the reason for the error. But it's solved. (PROBLEM SOLVED!).
 
 ## December 14th, 2025
 
