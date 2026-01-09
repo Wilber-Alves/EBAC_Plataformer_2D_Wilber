@@ -230,6 +230,13 @@ Transitioned from a direct particle reference to a prefab-based instantiation sy
 
 (Module 18 submission - Creating a 2D platformer - Adding Visual Effects (VFX)/ NOTE: The activity began on December 3rd and ended on January 7th).
 
+## January, 8th, 2026
+
+### Adding Sound Effects (SFX)
+
+Several Unity plugins and DOTween packages have been updated, and free sound effect packages from the Unity asset store have been installed in the project. The ItemCollectableBase script has been modified to include coin sound effects when collected. Other sound effects will be introduced to the project soon.
+
+SFX: Free Sound Effects Pack (by Olivier Girardot) and RPG Essentials Sound Effects - FREE! (by leohpaz), from Unity Asset Store.
 
 
 
