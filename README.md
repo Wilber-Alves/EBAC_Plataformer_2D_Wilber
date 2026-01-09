@@ -228,7 +228,7 @@ Transitioned from a direct particle reference to a prefab-based instantiation sy
 
 <img src="https://github.com/user-attachments/assets/f799ca8b-fa9d-49a0-91ba-4fca9d736ce3" width="350" title="Double Ice Jump - A temporary ice platform forms at the player's feet, allowing for a second jump."/>
 
-<img src= https://github.com/user-attachments/assets/b3e704f0-bf63-4676-b3f9-57bea7bed405 width="250" title="Particle System - Snowstorm"/>
+<img src= https://github.com/user-attachments/assets/b3e704f0-bf63-4676-b3f9-57bea7bed405 width="350" title="Particle System - Snowstorm"/>
 
 (Module 18 submission - Creating a 2D platformer - Adding Visual Effects (VFX)/ NOTE: The activity began on December 3rd and ended on January 7th).
 
