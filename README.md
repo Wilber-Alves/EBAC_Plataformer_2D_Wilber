@@ -224,9 +224,11 @@ Added dust visual effects (VFX) for running mechanics (activated with Z + Direct
 
 ### VFX System Overhaul & Ice Jump Implementation:
 
-Transitioned from a direct particle reference to a prefab-based instantiation system for all movement VFX (run, walk, and jump), resolving previous rendering issues and improving performance. This update introduces a new "Double Ice Jump" effect by integrating ice crystals into the dust material and includes fine-tuning of particle behaviors for sprinting and basic movement, alongside minor scene adjustments for better visual consistency.
+Transitioned from a direct particle reference to a prefab-based instantiation system for all movement VFX (run, walk, and jump), resolving previous rendering issues and improving performance. This update introduces a new "Double Ice Jump" effect by integrating ice crystals into the dust material and includes fine-tuning of particle behaviors for sprinting and basic movement, alongside minor scene adjustments for better visual consistency. Inserting a particle system to create a snowstorm in the game scene.
 
 <img src="https://github.com/user-attachments/assets/f799ca8b-fa9d-49a0-91ba-4fca9d736ce3" width="350" title="Double Ice Jump - A temporary ice platform forms at the player's feet, allowing for a second jump."/>
+
+<img src= https://github.com/user-attachments/assets/b3e704f0-bf63-4676-b3f9-57bea7bed405 width="250" title="Particle System - Snowstorm"/>
 
 (Module 18 submission - Creating a 2D platformer - Adding Visual Effects (VFX)/ NOTE: The activity began on December 3rd and ended on January 7th).
 
