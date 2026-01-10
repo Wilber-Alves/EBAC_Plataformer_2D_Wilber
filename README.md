@@ -242,4 +242,6 @@ SFX: Free Sound Effects Pack (by Olivier Girardot) and RPG Essentials Sound Effe
 
 ## January, 9th, 2026
 
-Sound effects of footsteps were added to the main character. Scripts for sound effects and sound effect randomizers were created to include effects synchronized with events in the animation.
+### Adding Footsteps Sound Effects (SFX)
+
+Sound effects of footsteps were added to the main character. Scripts (AudioPlayerHelper.cs and AudioRandomPlayAudioClips.cs) for sound effects and sound effect randomizers were created to include effects synchronized with events in the animation.
