@@ -240,5 +240,6 @@ Several Unity plugins and DOTween packages have been updated, and free sound eff
 
 SFX: Free Sound Effects Pack (by Olivier Girardot) and RPG Essentials Sound Effects - FREE! (by leohpaz), from Unity Asset Store.
 
+## January, 9th, 2026
 
-
+Sound effects of footsteps were added to the main character. Scripts for sound effects and sound effect randomizers were created to include effects synchronized with events in the animation.
