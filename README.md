@@ -245,3 +245,9 @@ SFX: Free Sound Effects Pack (by Olivier Girardot) and RPG Essentials Sound Effe
 ### Adding Footsteps Sound Effects (SFX)
 
 Sound effects of footsteps were added to the main character. Scripts (AudioPlayerHelper.cs and AudioRandomPlayAudioClips.cs) for sound effects and sound effect randomizers were created to include effects synchronized with events in the animation.
+
+## January, 21th, 2026
+
+### Adding jump Sound Effects (SFX) and Pause UI
+
+A UI was created for the pause button containing sliders for sound effects and ambient sound, in addition to including a sound effect event for jumping (still needs adjustments, as the created list of steps is also picking up sound effect 4 for jumping). Minor scene and user interface adjustments were made.
