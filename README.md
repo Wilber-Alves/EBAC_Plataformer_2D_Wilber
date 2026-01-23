@@ -251,3 +251,9 @@ Sound effects of footsteps were added to the main character. Scripts (AudioPlaye
 ### Adding jump Sound Effects (SFX) and Pause UI
 
 A UI was created for the pause button containing sliders for sound effects and ambient sound, in addition to including a sound effect event for jumping (still needs adjustments, as the created list of steps is also picking up sound effect 4 for jumping). Minor scene and user interface adjustments were made.
+
+## January, 22th, 2026
+
+### Audio mixer adjustments and original music composition
+
+Audio mixer setup update to include music, sound effects, and ambience. Music composed for flutes, celesta, and harp. Created using Sibelius software. This is an original composition by the game developer (Wilber Alves).
