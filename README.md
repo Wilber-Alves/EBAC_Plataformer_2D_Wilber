@@ -257,3 +257,9 @@ A UI was created for the pause button containing sliders for sound effects and a
 ### Audio mixer adjustments and original music composition
 
 Audio mixer setup update to include music, sound effects, and ambience. Music composed for flutes, celesta, and harp. Created using Sibelius software. This is an original composition by the game developer (Wilber Alves).
+
+## January, 23th, 2026
+
+### Audio mixer adjustments
+
+Inclusion of the audio transition script, updating the audio mixer with adjustments to music volume, sound effects, and ambience. Inclusion of the audio mixer in the astronaut and coin prefabs.
