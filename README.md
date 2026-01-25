@@ -263,3 +263,9 @@ Audio mixer setup update to include music, sound effects, and ambience. Music co
 ### Audio mixer adjustments
 
 Inclusion of the audio transition script, updating the audio mixer with adjustments to music volume, sound effects, and ambience. Inclusion of the audio mixer in the astronaut and coin prefabs.
+
+## January, 24th, 2026
+
+### UI slider volume implementation
+
+New script for adjusting sound volume, inclusion of a slider for music volume, minor modifications to the audio transition script, and inclusion of mixers and snapshots of in-game and menu transitions. Adjustments to maximum and minimum values ​​in the game's Audio Mixer.
