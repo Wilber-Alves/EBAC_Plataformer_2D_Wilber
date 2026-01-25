@@ -4,7 +4,7 @@ using UnityEngine.Audio;
 public class AudioTransition : MonoBehaviour
 {
     public AudioMixerSnapshot snapshot;
-    public float transitionTime = .1f;
+    public float transitionTime = 0.1f;
 
 
     public void MakeTransition()
