@@ -44,7 +44,7 @@ public class ItemCollectableBase : MonoBehaviour
             audioSource.spatialBlend = 0f;
             audioSource.Play();
 
-            Destroy(gameObject, 0.3f);
+            Destroy(gameObject, 0.5f);
 
         }
         else
