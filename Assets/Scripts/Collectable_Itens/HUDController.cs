@@ -4,6 +4,11 @@ using TMPro;
 
 public class HUDController : MonoBehaviour
 {
+    [Header("Monsters Settings")]
+    public TextMeshProUGUI monsterText;
+    public SOInt monsterKillSO;
+    public int totalMonstersInLevel = 12;
+
     [Header("Health Settings")]
     public Slider healthSlider;
     public SOFloat_Health SOFloat_Health;
@@ -47,6 +52,12 @@ public class HUDController : MonoBehaviour
         {
             coinText.text = soFloat.valueFloat.ToString("F0");
         }
+
+        if (monsterKillSO != null && monsterText != null)
+        {
+            monsterText.text = $"Monstros: {monsterKillSO.valueInt} / {totalMonstersInLevel}";
+        }
+
     }
 }
 

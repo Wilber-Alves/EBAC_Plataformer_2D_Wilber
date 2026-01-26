@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.Rendering;
 
 public class WeaponBase : MonoBehaviour
 {
@@ -7,6 +8,10 @@ public class WeaponBase : MonoBehaviour
     public Transform positionToShoot;
     public float timeBetweenShots = 0.3f;
     public Transform playerSideReference;
+
+    public AudioRandomPlayAudioClips randomShoot;
+
+
     private Player _player;
 
 
@@ -51,6 +56,11 @@ public class WeaponBase : MonoBehaviour
     {
         if (positionToShoot == null) return;
 
+        if (randomShoot != null)
+        {
+            randomShoot.PlayRandom();
+        }
+
         var projectile = Instantiate(prefabProjectile, positionToShoot.position, Quaternion.identity);
 
         projectile.side = _player.GetFacingDirection();
@@ -62,7 +72,7 @@ public class WeaponBase : MonoBehaviour
         foreach (var t in transforms)
         {
             
-            if (t.name.ToLower() == "ShootPosition")
+            if (t.name.ToLower().Contains("ShootPosition"))
             {
                 positionToShoot = t;
             }

@@ -5,11 +5,15 @@ public class EnemyBase : MonoBehaviour
 {
     [Header("Base Monster Attributes - The basic enemy concept would be the ice spikes.")]
     public int damageAmount = 10;
+
+    public bool countAsKill = true;
+    public SOInt monsterKillCount; 
+
     protected bool _isFrozen = false;
     protected bool _isDead = false;
     public HealthBase HealthBase;
     public float timeToDestroy = 1.0f;
-   
+    public AudioSource audioSourceKill;
     private void Awake()
     {
         if (HealthBase != null) HealthBase.OnKill += OnEnemyKill;
@@ -19,6 +23,11 @@ public class EnemyBase : MonoBehaviour
     {
         HealthBase.OnKill -= OnEnemyKill; // only for remove the callback
         _isDead = true;
+        
+        if (MonsterKillManager.Instance != null)
+        {
+            MonsterKillManager.Instance.AddKill();
+        }
 
         var animator = GetComponentInChildren<Animator>();
         if (animator != null) animator.speed = 1;
@@ -37,6 +46,7 @@ public class EnemyBase : MonoBehaviour
         var colliders = GetComponentsInChildren<Collider2D>();
         foreach (var c in colliders) c.enabled = false;
 
+        if (audioSourceKill != null) audioSourceKill.Play(); // play death sound
         Destroy(gameObject, timeToDestroy); // destroy after animation time
     }
 
