@@ -7073,6 +7073,8 @@ MonoBehaviour:
   positionToShoot: {fileID: 2663510441291498445}
   timeBetweenShots: 0.3
   playerSideReference: {fileID: 0}
+  shootSound: {fileID: 8300000, guid: 1d74880bed4586644a16a79a2d9dc8af, type: 3}
+  volume: 10
 --- !u!1 &8585019351470494799
 GameObject:
   m_ObjectHideFlags: 0
