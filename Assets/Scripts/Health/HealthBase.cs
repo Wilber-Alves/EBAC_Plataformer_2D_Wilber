@@ -52,7 +52,7 @@ public class HealthBase : MonoBehaviour
         _currentHealth -= damage;
         UpdateSO();
 
-        OnDamage?.Invoke();
+       OnDamage?.Invoke();
 
         Debug.Log($"{gameObject.name} received {damage} damage. Current health: {_currentHealth}");
 

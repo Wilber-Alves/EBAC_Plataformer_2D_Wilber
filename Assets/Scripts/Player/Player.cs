@@ -88,7 +88,7 @@ public class Player : MonoBehaviour
     {
         healthBase.OnKill -= OnPlayerKill; // only for remove the callback
         // some modifications
-        _isAlive = false; // this will stop the movimento on Update
+        _isAlive = false; // this will stop the moviment on Update
         if (_currentPlayer != null ) _currentPlayer.SetTrigger(triggerDeath);
         myRigidbody.linearVelocity = Vector2.zero;
         myRigidbody.simulated = false; // player will stop collision.
