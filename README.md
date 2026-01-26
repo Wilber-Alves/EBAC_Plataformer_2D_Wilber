@@ -269,3 +269,10 @@ Inclusion of the audio transition script, updating the audio mixer with adjustme
 ### UI slider volume implementation
 
 New script for adjusting sound volume, inclusion of a slider for music volume, minor modifications to the audio transition script, and inclusion of mixers and snapshots of in-game and menu transitions. Adjustments to maximum and minimum values ​​in the game's Audio Mixer.
+
+## January, 25th, 2026
+
+### Music Transition System: 
+
+A script called AudioTriggerTransition was created, allowing music to start at specific points in the level. Music was created using Sibelius software. Boss battle music, monster cave music, and secret area music were composed by the developer. Adjustments were made to the audio mixer to include the new music. A healing sound effect was added to the hearts. Minor scenario modifications were made for better interaction with the music transition triggers. An attempt was made to create a prefab to play secret area signals without using the trigger system... but it didn't work out very well.
+
