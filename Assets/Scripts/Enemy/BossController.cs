@@ -17,7 +17,7 @@ public class BossController : EnemyPatrolJumper
     public float angryMoveSpeedMultiplier = 1.5f;
     private bool _isAngry = false;
     private HealthBase _bossHealth;
-    private Rigidbody2D _rb;
+    private Rigidbody2D _rigidbody;
 
     [Header("End Game UI")]
     public GameObject endGameCanvas;
@@ -26,7 +26,7 @@ public class BossController : EnemyPatrolJumper
     {
         base.Start();
         _bossHealth = GetComponent<HealthBase>();
-        _rb = GetComponent<Rigidbody2D>();
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     protected override void Update()
@@ -37,7 +37,7 @@ public class BossController : EnemyPatrolJumper
 
         if (_isDead)
         {
-            _rb.linearVelocity = Vector2.zero;
+            _rigidbody.linearVelocity = Vector2.zero;
 
 
             if (animator != null) animator.Play("Death");
@@ -105,6 +105,7 @@ public class BossController : EnemyPatrolJumper
         if (projectilePrefab != null && firePoint != null)
         {
             GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            Destroy(proj, 1.0f);
             Physics2D.IgnoreCollision(proj.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
  
@@ -141,7 +142,7 @@ public class ProjectileDamage : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        // 1. Se bater no Player, dá dano e some
+        
         if (collision.CompareTag("Player"))
         {
             var health = collision.GetComponent<HealthBase>();
