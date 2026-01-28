@@ -288,4 +288,10 @@ Updates to the boss animations, The boss still used the blue slime animations; n
 
 Changes to the boss animations. Improved boss projectiles to resemble fireballs. Implementation of boss rage state mechanics, "almost homing" projectile targeting, and projectile damage. Adjustments to enemy direction (now they walk and look in the same direction as the sprite). Minor modifications to the HealthBase script - inclusion of currentHealth variables. Adjustments to player event calls, such as the Game Over scene when you die. NEEDS FIXING: the Game Over canvas is still not appearing.
 
+## January, 28th, 2026
+
+### Finalization of the platform game project
+
+Changes to player animation, Changes to the boss combat system, Scene modifications, inclusion of more clouds and plants that now move, Adjustments to the player's death animations, Rename of the music folder, Inclusion of a gameover manager, Inclusion of a pause manager script and Inclusion of a script for planet and smoke movement
+
 
