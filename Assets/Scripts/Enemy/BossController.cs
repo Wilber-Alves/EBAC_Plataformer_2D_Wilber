@@ -9,8 +9,15 @@ public class BossController : EnemyPatrolJumper
     public float projectileSpeed = 10f;
     private float _fireTimer;
 
-    [Header("Targeting")]
-    private Transform _playerTransform;
+
+    [Header("Angry State Settings")]
+    public float maxHealth = 30.0f;
+    public float angryHealthThreshold = 0.5f;
+    public float angryFireRate = 0.8f;
+    public float angryMoveSpeedMultiplier = 1.5f;
+    private bool _isAngry = false;
+    private HealthBase _bossHealth;
+    private Rigidbody2D _rb;
 
     [Header("End Game UI")]
     public GameObject endGameCanvas;
@@ -18,74 +25,132 @@ public class BossController : EnemyPatrolJumper
     protected override void Start()
     {
         base.Start();
-
-        // search for the player in the scene
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
-        if (player != null) _playerTransform = player.transform;
+        _bossHealth = GetComponent<HealthBase>();
+        _rb = GetComponent<Rigidbody2D>();
     }
 
     protected override void Update()
     {
+ 
         base.Update();
 
-        if (_isDead || _isFrozen || _playerTransform == null) return;
 
-        HandleFlip();
+        if (_isDead)
+        {
+            _rb.linearVelocity = Vector2.zero;
+
+
+            if (animator != null) animator.Play("Death");
+
+
+            if (endGameCanvas != null && !endGameCanvas.activeSelf)
+            {
+                Invoke("ActivateEndGameUI", 2f);
+            }
+            return;
+        }
+
+        CheckAngryState();
+
+        float currentFireRate = _isAngry ? angryFireRate : fireRate;
+
 
         _fireTimer += Time.deltaTime;
-        if (_fireTimer >= fireRate)
+        if (_fireTimer >= currentFireRate)
         {
             ShootAtPlayer();
             _fireTimer = 0;
         }
     }
+    private void ActivateEndGameUI()
+    {
+        if (endGameCanvas != null)
+        {
+            endGameCanvas.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
+    }
+
+    private void CheckAngryState()
+    {
+        if (_isAngry || _bossHealth == null) return;
+
+        if (_bossHealth._currentHealth <= _bossHealth.startHealth * angryHealthThreshold)
+        {
+            EnterAngryState();
+        }
+    }
+    private void EnterAngryState()
+    {
+        _isAngry = true;
+
+        patrolSpeed *= angryMoveSpeedMultiplier;
+        chaseSpeed *= angryMoveSpeedMultiplier;
+
+        if (TryGetComponent<SpriteRenderer>(out SpriteRenderer sr))
+        {
+            sr.color = Color.red;
+        }
+
+        Debug.Log("The Boss is Angry!!!");
+    }
+
 
     private void ShootAtPlayer()
     {
+        if (_player == null) return;
+
         if (projectilePrefab != null && firePoint != null)
         {
-            // 1. instantiate projectile at firePoint position
-            GameObject proj = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            GameObject proj = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
+            Physics2D.IgnoreCollision(proj.GetComponent<Collider2D>(), GetComponent<Collider2D>());
 
-            // 2. calculate direction towards the player
-            Vector2 direction = (_playerTransform.position - firePoint.position).normalized;
+ 
+            Vector2 direction = (_player.position - firePoint.position).normalized;
 
-            // 3. applies velocity to the projectile
             if (proj.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
             {
                 rb.linearVelocity = direction * projectileSpeed;
             }
-        }
-    }
 
-    private void HandleFlip()
-    {
-        // take current scale values
-        float posX = transform.localScale.x;
-        float posY = transform.localScale.y;
-
-        // compare the boss position with the player position
-        if (_playerTransform.position.x < transform.position.x)
-        {
-            // if player are on the left: force X scale to be negative
-            transform.localScale = new Vector3(-Mathf.Abs(posX), posY);
-        }
-        else
-        {
-            // if player are on the right: force X scale to be positive
-            transform.localScale = new Vector3(Mathf.Abs(posX), posY);
+            if (!proj.GetComponent<ProjectileDamage>())
+            {
+                proj.AddComponent<ProjectileDamage>().damageAmount = 10;
+            }
         }
     }
 
     private void OnDisable()
     {
-        // activate end game canvas when boss is defeated
         if (_isDead && endGameCanvas != null)
         {
             endGameCanvas.SetActive(true);
             Time.timeScale = 0f;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+        }
+    }
+}
+
+
+public class ProjectileDamage : MonoBehaviour
+{
+    public int damageAmount = 10;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        // 1. Se bater no Player, dá dano e some
+        if (collision.CompareTag("Player"))
+        {
+            var health = collision.GetComponent<HealthBase>();
+            if (health != null) health.Damage(damageAmount);
+            Destroy(gameObject);
+        }
+        else if (collision.gameObject.layer == LayerMask.NameToLayer("Ground") || collision.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
         }
     }
 }

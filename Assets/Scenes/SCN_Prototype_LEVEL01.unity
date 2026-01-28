@@ -2114,7 +2114,7 @@ Transform:
   m_GameObject: {fileID: 153804329}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.6799927, y: 1.8849998, z: 0}
+  m_LocalPosition: {x: 4.52, y: 2.24, z: 0.4146309}
   m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3067,6 +3067,11 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 25
   m_SortAtRoot: 0
+--- !u!1 &209575690 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8360662952093320465, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+  m_PrefabInstance: {fileID: 1927628807}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &229451639
 GameObject:
   m_ObjectHideFlags: 0
@@ -4402,6 +4407,7 @@ MonoBehaviour:
   startHealth: 10
   destroyOnKill: 0
   delayToDestroy: 0
+  _currentHealth: 0
   _flashColor: {fileID: 281965456}
 --- !u!114 &281965458
 MonoBehaviour:
@@ -4428,10 +4434,10 @@ MonoBehaviour:
   freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
   patrolSpeed: 2
   chaseSpeed: 4
-  detectionRadius: 5
+  detectionRadius: 8
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   boolRun: Run
   groundCheck: {fileID: 48561240}
   groundLayer:
@@ -4640,6 +4646,93 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &304715147
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 304715148}
+  - component: {fileID: 304715149}
+  m_Layer: 7
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &304715148
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304715147}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: -2.96, y: 3.32, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 503492923}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!212 &304715149
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 304715147}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1001 &308205179
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4740,11 +4833,10 @@ Transform:
   m_GameObject: {fileID: 314287596}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 192.26, y: -5.97, z: -0.27999973}
+  m_LocalPosition: {x: 176.98, y: -4.2, z: -0.27999973}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1470512140}
   - {fileID: 153804330}
   - {fileID: 503492923}
   m_Father: {fileID: 341940029}
@@ -4822,7 +4914,7 @@ Rigidbody2D:
   m_Mass: 5
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 5
+  m_GravityScale: 50
   m_Material: {fileID: 6200000, guid: 9ea1c930e23418e409af061bc99e3e86, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -4847,7 +4939,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderers:
-  - {fileID: 1470512142}
   - {fileID: 1126232653}
   - {fileID: 503492930}
   - {fileID: 503492929}
@@ -4856,6 +4947,7 @@ MonoBehaviour:
   - {fileID: 503492926}
   - {fileID: 503492925}
   - {fileID: 503492924}
+  - {fileID: 304715149}
   flashColor: {r: 0, g: 1, b: 0.8727236, a: 1}
   duration: 0.1
 --- !u!114 &314287604
@@ -4874,6 +4966,7 @@ MonoBehaviour:
   startHealth: 30
   destroyOnKill: 0
   delayToDestroy: 0
+  _currentHealth: 0
   _flashColor: {fileID: 314287603}
 --- !u!114 &314287605
 MonoBehaviour:
@@ -4900,7 +4993,7 @@ MonoBehaviour:
   freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
   patrolSpeed: 2
   chaseSpeed: 4
-  detectionRadius: 5
+  detectionRadius: 20
   playerLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -4910,13 +5003,17 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundDistance: 0.5
-  wallDetectionRange: 0.3
-  jumpForce: 10
-  jumpInterval: 3
+  wallDetectionRange: 5
+  jumpForce: 500
+  jumpInterval: 15
   projectilePrefab: {fileID: 2481750137168219343, guid: 27c19263ccf896f4db9874ee4ac64b56, type: 3}
-  firePoint: {fileID: 1470512140}
+  firePoint: {fileID: 304715148}
   fireRate: 2
-  projectileSpeed: 10
+  projectileSpeed: 20
+  maxHealth: 30
+  angryHealthThreshold: 0.5
+  angryFireRate: 0.8
+  angryMoveSpeedMultiplier: 1.5
   endGameCanvas: {fileID: 1971147757}
 --- !u!1 &318183299
 GameObject:
@@ -5007,6 +5104,7 @@ MonoBehaviour:
   startHealth: 5
   destroyOnKill: 0
   delayToDestroy: 1
+  _currentHealth: 0
   _flashColor: {fileID: 318183302}
 --- !u!114 &318183305
 MonoBehaviour:
@@ -5036,7 +5134,7 @@ MonoBehaviour:
   detectionRadius: 5
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   boolRun: Run
   groundCheck: {fileID: 236681554}
   groundLayer:
@@ -5742,6 +5840,7 @@ MonoBehaviour:
   startHealth: 5
   destroyOnKill: 0
   delayToDestroy: 1
+  _currentHealth: 0
   _flashColor: {fileID: 352686181}
 --- !u!114 &352686181
 MonoBehaviour:
@@ -5793,7 +5892,7 @@ MonoBehaviour:
   detectionRadius: 5
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   boolRun: Run
   groundCheck: {fileID: 2042844647}
   groundLayer:
@@ -12621,6 +12720,7 @@ MonoBehaviour:
   startHealth: 5
   destroyOnKill: 0
   delayToDestroy: 1
+  _currentHealth: 0
   _flashColor: {fileID: 465316287}
 --- !u!114 &465316290
 MonoBehaviour:
@@ -12650,7 +12750,7 @@ MonoBehaviour:
   detectionRadius: 5
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   boolRun: Run
   groundCheck: {fileID: 734512648}
   groundLayer:
@@ -13185,6 +13285,7 @@ MonoBehaviour:
   startHealth: 5
   destroyOnKill: 0
   delayToDestroy: 1
+  _currentHealth: 0
   _flashColor: {fileID: 487376969}
 --- !u!114 &487376972
 MonoBehaviour:
@@ -13214,7 +13315,7 @@ MonoBehaviour:
   detectionRadius: 5
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   boolRun: Run
   groundCheck: {fileID: 1676092320}
   groundLayer:
@@ -13622,7 +13723,10 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: 4985d622b1038704aac5f4ef02e0281a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 3407969315473139269, guid: 09ecab9aada0bb44285027008d33cf0d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 304715148}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 09ecab9aada0bb44285027008d33cf0d, type: 3}
 --- !u!4 &503492923 stripped
@@ -14824,6 +14928,7 @@ MonoBehaviour:
   startHealth: 5
   destroyOnKill: 0
   delayToDestroy: 1
+  _currentHealth: 0
   _flashColor: {fileID: 574816615}
 --- !u!114 &574816618
 MonoBehaviour:
@@ -14853,7 +14958,7 @@ MonoBehaviour:
   detectionRadius: 5
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   boolRun: Run
   groundCheck: {fileID: 663824267}
   groundLayer:
@@ -17375,6 +17480,7 @@ MonoBehaviour:
   startHealth: 10
   destroyOnKill: 0
   delayToDestroy: 0
+  _currentHealth: 0
   _flashColor: {fileID: 718325172}
 --- !u!114 &718325174
 MonoBehaviour:
@@ -17401,10 +17507,10 @@ MonoBehaviour:
   freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
   patrolSpeed: 2
   chaseSpeed: 4
-  detectionRadius: 5
+  detectionRadius: 8
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   boolRun: Run
   groundCheck: {fileID: 1600286764}
   groundLayer:
@@ -23970,6 +24076,7 @@ MonoBehaviour:
   startHealth: 5
   destroyOnKill: 0
   delayToDestroy: 1
+  _currentHealth: 0
   _flashColor: {fileID: 828205854}
 --- !u!114 &828205857
 MonoBehaviour:
@@ -23999,7 +24106,7 @@ MonoBehaviour:
   detectionRadius: 5
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   boolRun: Run
   groundCheck: {fileID: 128713891}
   groundLayer:
@@ -24954,6 +25061,23 @@ SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 6889306746547195745, guid: f0598fbc9e0eee842bf55869c2ca1fe4, type: 3}
   m_PrefabInstance: {fileID: 605652026}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &876452981 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6421862744734265601, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+  m_PrefabInstance: {fileID: 1927628807}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &876452986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 876452981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdc4a14688c843408071981bf43ac51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &877787025
 GameObject:
   m_ObjectHideFlags: 0
@@ -30312,6 +30436,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderers:
+  - {fileID: 1928674887}
   - {fileID: 1897620515}
   - {fileID: 1897620509}
   - {fileID: 1897620508}
@@ -30338,6 +30463,7 @@ MonoBehaviour:
   startHealth: 10
   destroyOnKill: 0
   delayToDestroy: 0
+  _currentHealth: 0
   _flashColor: {fileID: 1272878538}
 --- !u!114 &1272878540
 MonoBehaviour:
@@ -30364,10 +30490,10 @@ MonoBehaviour:
   freezeColor: {r: 0.5, g: 0.8, b: 1, a: 1}
   patrolSpeed: 2
   chaseSpeed: 4
-  detectionRadius: 5
+  detectionRadius: 8
   playerLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
   boolRun: Run
   groundCheck: {fileID: 1737239055}
   groundLayer:
@@ -32769,109 +32895,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba78798159e737345af970b17cdae529, type: 3}
---- !u!1 &1470512139
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1470512140}
-  - component: {fileID: 1470512142}
-  - component: {fileID: 1470512141}
-  m_Layer: 7
-  m_Name: Firepoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1470512140
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470512139}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.9961947, w: -0.08715578}
-  m_LocalPosition: {x: -6.6600037, y: 9.210001, z: 0.6946306}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 314287597}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 190}
---- !u!114 &1470512141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470512139}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d852bc15e1c183441abdbd48e2e725e9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bounceSpeed: 3
-  bounceAmount: 0.5
-  rotationSpeed: 0
---- !u!212 &1470512142
-SpriteRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1470512139}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
-  m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
-  m_AdaptiveModeThreshold: 0.5
-  m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
-  m_MaskInteraction: 0
-  m_SpriteSortPoint: 0
 --- !u!4 &1481103744 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5002165737026892446, guid: ba78798159e737345af970b17cdae529, type: 3}
@@ -35494,6 +35517,7 @@ MonoBehaviour:
   doubleJumpVFXPrefab: {fileID: 641726773152296448, guid: ddd5e41bb64417b49b1c75716ce428b1, type: 3}
   dustStepRate: 0.2
   runDustVFXPrefab: {fileID: 2057689577152507275, guid: b675ff3417c6fb44ca565583723e8ec5, type: 3}
+  gameOverCanvas: {fileID: 209575690}
 --- !u!114 &1638859790
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35510,6 +35534,7 @@ MonoBehaviour:
   startHealth: 30
   destroyOnKill: 0
   delayToDestroy: 0.1
+  _currentHealth: 0
   _flashColor: {fileID: 1638859792}
 --- !u!210 &1638859791
 SortingGroup:
@@ -38117,9 +38142,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1810009332}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.02, y: 0, z: 0.6946306}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.466, y: 3.466, z: 3.466}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 153804330}
@@ -38167,7 +38192,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 35
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -38504,6 +38529,23 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1825498532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6421862744734265601, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+  m_PrefabInstance: {fileID: 831002694750770096}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1825498537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1825498532}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbdc4a14688c843408071981bf43ac51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1825930200
 GameObject:
   m_ObjectHideFlags: 0
@@ -41066,6 +41108,34 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 876452986}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Load
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LoadScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 484959835313427399, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
@@ -41074,7 +41144,10 @@ PrefabInstance:
     - {fileID: 1108872360626875045, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
     - {fileID: 3732350025042066030, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6421862744734265601, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 876452986}
   m_SourcePrefab: {fileID: 100100000, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
 --- !u!224 &1927628808 stripped
 RectTransform:
@@ -41097,7 +41170,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1928674886
 Transform:
   m_ObjectHideFlags: 0
@@ -50203,6 +50276,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 692554030}
     m_Modifications:
+    - target: {fileID: 3557803425214527954, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -31.699951
+      objectReference: {fileID: 0}
     - target: {fileID: 5408728476893429158, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -50291,10 +50368,41 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1825498537}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Load
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: LoadScene, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460518757627706884, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6421862744734265601, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1825498537}
   m_SourcePrefab: {fileID: 100100000, guid: b8e4f9244ce4bec46a0150ed7d2fc8ae, type: 3}
 --- !u!50 &841665732785908632
 Rigidbody2D:

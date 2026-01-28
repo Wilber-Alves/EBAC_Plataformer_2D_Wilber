@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using DG.Tweening;
 
 public class Player : MonoBehaviour
@@ -64,6 +65,9 @@ public class Player : MonoBehaviour
     private Animator _currentPlayer;
     private WeaponBase _weaponBase;
 
+    [Header("Game Over UI")]
+    public GameObject gameOverCanvas;
+
     private void Awake()
     {
         
@@ -87,11 +91,32 @@ public class Player : MonoBehaviour
     private void OnPlayerKill()
     {
         healthBase.OnKill -= OnPlayerKill; // only for remove the callback
-        // some modifications
         _isAlive = false; // this will stop the moviment on Update
-        if (_currentPlayer != null ) _currentPlayer.SetTrigger(triggerDeath);
+
+        if (_currentPlayer != null)
+        {
+            _currentPlayer.SetTrigger(triggerDeath);
+        }
+
         myRigidbody.linearVelocity = Vector2.zero;
-        myRigidbody.simulated = false; // player will stop collision.
+
+        //myRigidbody.simulated = false; // player will stop collision.
+
+        if (gameOverCanvas != null)
+        {
+            StartCoroutine(ShowGameOverWithDelay(2f));
+        }
+    }
+    private IEnumerator ShowGameOverWithDelay(float delay)
+    {
+        yield return new WaitForSecondsRealtime(delay); // Ignora se o tempo estiver pausado
+        if (gameOverCanvas != null)
+        {
+            gameOverCanvas.SetActive(true);
+            Time.timeScale = 0f;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+        }
     }
 
     void Start()
@@ -186,9 +211,9 @@ public class Player : MonoBehaviour
 
         if (doubleJumpVFXPrefab != null)
         {
-            // Instancia na posição atual do player
+            
             GameObject vfx = Instantiate(doubleJumpVFXPrefab, transform.position, Quaternion.identity);
-            // Destrói o objeto após 1 segundo (ajuste esse tempo para a duração da sua partícula)
+           
             Destroy(vfx, 1f);
         }
     }
@@ -196,9 +221,9 @@ public class Player : MonoBehaviour
     {
         if (walkDustVFXPrefab != null)
         {
-            // Instancia o prefab da poeira na posição do player
+           
             GameObject vfx = Instantiate(walkDustVFXPrefab, transform.position, Quaternion.identity);
-            // Destrói o objeto após 1 segundo
+         
             Destroy(vfx, 1f);
         }
     }

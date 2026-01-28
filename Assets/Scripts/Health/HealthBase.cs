@@ -16,7 +16,7 @@ public class HealthBase : MonoBehaviour
     public bool destroyOnKill = false;
     public float delayToDestroy = 0f;
 
-    private float _currentHealth;
+    public float _currentHealth;
     private bool _isDead = false;
     private bool _isImmune = false;
 

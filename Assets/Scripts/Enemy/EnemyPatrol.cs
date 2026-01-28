@@ -67,10 +67,14 @@ public class EnemyPatrol : EnemyReactive
     private void HandlePlataformDetection()
     {
 
-        RaycastHit2D groundInfo = Physics2D.Raycast(groundCheck.position, Vector2.down, groundDistance, groundLayer);
-        RaycastHit2D wallInfo = Physics2D.Raycast(groundCheck.position, Vector2.right * _direction, wallDetectionRange, groundLayer);
-        Debug.DrawRay(groundCheck.position, Vector2.down * groundDistance, Color.red);
-        Debug.DrawRay(groundCheck.position, Vector2.right * _direction * wallDetectionRange, Color.blue);
+        Vector2 rayOrigin = new Vector2(transform.position.x + (_direction * 0.5f), groundCheck.position.y);
+
+        RaycastHit2D groundInfo = Physics2D.Raycast(rayOrigin, Vector2.down, groundDistance, groundLayer);
+        RaycastHit2D wallInfo = Physics2D.Raycast(rayOrigin, Vector2.right * _direction, wallDetectionRange, groundLayer);
+
+
+        Debug.DrawRay(rayOrigin, Vector2.down * groundDistance, Color.red);
+        Debug.DrawRay(rayOrigin, Vector2.right * _direction * wallDetectionRange, Color.blue);
 
         if (groundInfo.collider == null || wallInfo.collider == true)
         {
@@ -96,6 +100,7 @@ public class EnemyPatrol : EnemyReactive
         _direction *= -1;
         Vector3 scale = transform.localScale;
         scale.x *= -1;
+        scale.x = Mathf.Abs(scale.x) * (_direction * -1);
         transform.localScale = scale;
     }
 }
