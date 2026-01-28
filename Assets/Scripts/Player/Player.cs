@@ -65,8 +65,6 @@ public class Player : MonoBehaviour
     private Animator _currentPlayer;
     private WeaponBase _weaponBase;
 
-    [Header("Game Over UI")]
-    public GameObject gameOverCanvas;
 
     private void Awake()
     {
@@ -102,20 +100,9 @@ public class Player : MonoBehaviour
 
         //myRigidbody.simulated = false; // player will stop collision.
 
-        if (gameOverCanvas != null)
+        if (GameOverManager.Instance != null)
         {
-            StartCoroutine(ShowGameOverWithDelay(2f));
-        }
-    }
-    private IEnumerator ShowGameOverWithDelay(float delay)
-    {
-        yield return new WaitForSecondsRealtime(delay); // Ignora se o tempo estiver pausado
-        if (gameOverCanvas != null)
-        {
-            gameOverCanvas.SetActive(true);
-            Time.timeScale = 0f;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            GameOverManager.Instance.TriggerGameOver();
         }
     }
 
@@ -181,6 +168,7 @@ public class Player : MonoBehaviour
             _currentPlayer.SetBool(boolJumpDown, false);
         }
     }
+
     private void HandleJump()
     {
         if (Input.GetKeyDown(KeyCode.Space))
