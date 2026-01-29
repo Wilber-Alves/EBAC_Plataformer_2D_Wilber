@@ -296,6 +296,6 @@ Changes to the boss animations. Improved boss projectiles to resemble fireballs.
 
 ### Finalization of the 2D platform game project
 
-Changes to player animation, Changes to the boss combat system, Scene modifications, inclusion of more clouds and plants that now move, Adjustments to the player's death animations, Rename of the music folder, Inclusion of a gameover manager, Inclusion of a pause manager script and Inclusion of a script for planet and smoke movement
+Changes to player animation, Changes to the boss combat system, Scene modifications, inclusion of more clouds and plants that now move, Adjustments to the player's death animations, Rename of the music folder, Inclusion of a gameover manager, Inclusion of a pause manager script and Inclusion of a script for planet and smoke movement. NOTE: The Game Over canvas's problem is fixed.
 
 (Module 19 submission - Creating a 2D platformer - Adding Sound Effects (SFX)/ NOTE: The activity began on January 8th and ended on January 28th).
