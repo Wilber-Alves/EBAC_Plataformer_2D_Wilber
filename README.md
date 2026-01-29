@@ -282,11 +282,15 @@ A script called AudioTriggerTransition was created, allowing music to start at s
 
 Updates to the boss animations, The boss still used the blue slime animations; now it has its own. Updates to the boss prefab: Monsters received updates to incorporate noise when they die, as well as the inclusion of a script to quantify the number of deaths with a scriptable object. Adjustments to the pause screen and other scripts; scriptable objects were created to adjust the data on coins collected and enemies defeated on the end-game screen. MonsterKill script and related scriptable objects. System made to include data on the number of enemies killed; in the future, it may assist in triggering events, such as opening doors or making a boss appear. Inclusion of a start screen, a new scene with start, credits, and exit buttons. New level 1 prototype scene. Inclusion of the boss script, with an inheritance system inheriting all the abilities of the other monsters.
 
+<img src="https://github.com/user-attachments/assets/a0da8779-f7c4-44e1-af50-bcc9ebde09a8" width="250" title="Boss combat mechanics durant the rage state"/>
+
 ## January, 27th, 2026
 
 ### Implementation of boss combat mechanics, rage state, and other modifications to health, enemy, and player scripts.
 
 Changes to the boss animations. Improved boss projectiles to resemble fireballs. Implementation of boss rage state mechanics, "almost homing" projectile targeting, and projectile damage. Adjustments to enemy direction (now they walk and look in the same direction as the sprite). Minor modifications to the HealthBase script - inclusion of currentHealth variables. Adjustments to player event calls, such as the Game Over scene when you die. NEEDS FIXING: the Game Over canvas is still not appearing.
+
+<img src="https://github.com/user-attachments/assets/2c09fb19-1f7f-4cf2-a5d6-e92f9cb6e0f6" width="250" title="Boss combat mechanics durant the rage state"/>
 
 ## January, 28th, 2026
 
